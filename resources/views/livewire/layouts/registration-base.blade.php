@@ -2,7 +2,7 @@
 @section('main-base')
     <div class="flex justify-center w-full min-h-[1024px] h-screen">
         {{-- Left --}}
-        <div class="right-0 flex items-center justify-center w-3/5 bg-white ">
+        <div class="right-0 flex items-center justify-center w-7/12 bg-white ">
             {{-- Main Welcome --}}
             <div class="flex flex-col px-12 lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-28 items-right">
                 <h2 class="text-4xl font-bold md:text-6xl ">Welcome to</h2>
@@ -15,7 +15,7 @@
             </div>
         </div>
         {{-- Right --}}
-        <div class="flex flex-col items-center justify-center w-2/5 bg-[#4CAF50]">
+        <div class="flex flex-col items-center justify-center w-5/12 bg-[#4CAF50]">
             {{-- Upper Part | Logo --}}
             <div class="flex flex-col items-center ">
                 <img class="" src="{{ asset('images/Logo-W.png') }}" alt="">
@@ -26,6 +26,7 @@
             <div class="{{ Request::is('login/login-password') ? 'flex text-base text-[#FFFFFF] mt-28 mb-11' : 'hidden' }}  ">Log In</div>
             <div class="{{ Request::is('login/login-forgot-password') ? 'flex text-base text-[#FFFFFF] mt-28 mb-11' : 'hidden' }}  ">Forgot Password</div>
             <div class="{{ Request::is('signup') ? 'flex text-base text-[#FFFFFF] mt-28 mb-16' : 'hidden' }}  ">Sign Up</div>
+            <div class="{{ Request::is('signup/create-account') ? 'flex text-base text-[#FFFFFF] mt-28 mb-11' : 'hidden' }}  ">Sign Up</div>
             @yield('login-signup')
         </div>
     </div>

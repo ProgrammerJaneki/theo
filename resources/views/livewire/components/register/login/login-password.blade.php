@@ -13,7 +13,7 @@
                 <h2 class="text-[#FFFFFF]">Password</h2>
                 <div
                     class="group focus-within:ring-4 bg-[#FFFFFF] p-2 border-2 border-[#F5F5F5] font-semibold text-sm rounded-xl flex items-center justify-between w-80 h-12">
-                    <input class="bg-transparent focus:outline-none" type="password">
+                    <input class="bg-transparent border-none focus:border-none focus:outline-none" type="password">
                     {{-- <button> --}}
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -33,13 +33,9 @@
             </div>
             {{-- Login --}}
             <div class="flex flex-col text-center gap-y-10 mt-9">
-                {{-- <button class="flex justify-center items-center py-3 bg-[#FFE600] gap-x-3  rounded-xl w-full hover:ring-4" type="submit">
-                    Login
-                </button> --}}
                 <a class="flex justify-center items-center py-3 bg-[#FFE600] gap-x-3  rounded-xl w-full hover:ring-4"
-                    href="{{ route('login-password') }}">
+                    href="{{ route('profile-setup') }}">
                     <button type="submit">Login</button>
-                    {{-- <span>Login</span> --}}
                 </a>
                 <a class="font-bold text-[#FFFFFF]" href="{{ 'login-forgot-password' }}">Forgot password?</a>
             </div>

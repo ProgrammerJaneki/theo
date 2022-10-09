@@ -19,7 +19,7 @@
             <hr class="h-[1px] bg-[#FFFFFF] w-32" />
         </div>
         <a class="flex justify-center items-center py-3 bg-[#FFE600] gap-x-3 px-11 rounded-xl max-w-[320px] hover:ring-4"
-            href="">
+            href="{{ route('create-account') }}">
             <span>Create a new account</span>
         </a>
         {{-- Signup alternative --}}
