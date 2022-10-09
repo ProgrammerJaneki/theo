@@ -25,7 +25,6 @@
     @yield('main-base')
 
     <livewireScripts />
-    @stack('scripts')
 </body>
 
 </html>

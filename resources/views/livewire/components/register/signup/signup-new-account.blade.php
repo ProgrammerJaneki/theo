@@ -4,13 +4,13 @@
         {{-- Email --}}
         <div class="space-y-2">
             <h2 class="text-[#FFFFFF]">Email</h2>
-            <input class="h-12 p-2 focus-within:ring-4 w-80 rounded-xl focus:outline-none" type="text">
+            <input class="h-12 p-4 focus-within:ring-4 w-80 rounded-xl focus:outline-none" type="text">
         </div>
         {{-- Password --}}
         <div class="space-y-2">
             <h2 class="text-[#FFFFFF]">Password</h2>
             <div
-                class="group focus-within:ring-4 bg-[#FFFFFF] p-2 border-2 border-[#F5F5F5] font-semibold text-sm rounded-xl flex items-center justify-between w-80 h-12">
+                class="group focus-within:ring-4 bg-[#FFFFFF] p-4 border-2 border-[#F5F5F5] font-semibold text-sm rounded-xl flex items-center justify-between w-80 h-12">
                 <input class="bg-transparent focus:outline-none" type="password">
                 {{-- <button> --}}
                 <button type="button">
@@ -28,7 +28,7 @@
         {{-- Confirm Password --}}
         <div class="space-y-2">
             <h2 class="text-[#FFFFFF]">Confirm Password</h2>
-            <input class="h-12 p-2 focus-within:ring-4 w-80 rounded-xl focus:outline-none" type="text">
+            <input class="h-12 p-4 focus-within:ring-4 w-80 rounded-xl focus:outline-none" type="text">
         </div>
         {{-- Login --}}
         <div x-data="{ openVerify: false }" class="flex flex-col text-center gap-y-5 mt-9">

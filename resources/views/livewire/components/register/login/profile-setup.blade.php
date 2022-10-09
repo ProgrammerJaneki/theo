@@ -107,7 +107,7 @@
                             <button
                                 class="text-center text-[#FFFFFF] py-3 bg-[#4CAF50] border-2 border-[#4CAF50] hover:bg-[#4CA450]/70
                         transition-all duration-300 ease-linear rounded-xl w-[220px]"
-                                type="button"> Next
+                                @click="thirdSlide = false, fourthSlide = true" type="button"> Next
                             </button>
                         </div>
                     </div>
@@ -126,11 +126,6 @@
                 <div class="right-0 flex items-center justify-center w-7/12 bg-[#FFFFFF] ">
                     <div class=" flex flex-col px-12 lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
                         <div class="space-y-9">
-                            {{-- <div class="flex gap-x-1">
-                                <div class="rounded-full w-3 h-3 bg-[#D9D9D9]"></div>
-                                <div class="rounded-full w-3 h-3 bg-[#D9D9D9]"></div>
-                                <div class="rounded-full w-3 h-3 bg-[#4CAF50]"></div>
-                            </div> --}}
                             <h2 class="text-2xl font-bold md:text-5xl ">Set up your <br> profile</h2>
                             <h4 class="text-2xl leading-none">To get started, you need to provide your <br> personal
                                 information to access the system <br> based on your current level.</h4>
@@ -151,11 +146,11 @@
                         {{-- Names --}}
                         <div class="space-y-2">
                             <h2 class="text-[#FFFFFF]">First Name</h2>
-                            <input class="h-12 p-2 focus-within:ring-4 w-80 rounded-xl focus:outline-none" type="text">
+                            <input class="h-12 p-4 focus-within:ring-4 w-80 rounded-xl focus:outline-none" type="text">
                         </div>
                         <div class="space-y-2">
                             <h2 class="text-[#FFFFFF]">Last Name</h2>
-                            <input class="h-12 p-2 focus-within:ring-4 w-80 rounded-xl focus:outline-none" type="text">
+                            <input class="h-12 p-4 focus-within:ring-4 w-80 rounded-xl focus:outline-none" type="text">
                         </div>
                         {{-- Date of Birth --}}
                         <div class="space-y-2">
@@ -194,8 +189,7 @@
                         </div>
                         {{-- Country --}}
                         <div
-                            class="group focus-within:ring-4 bg-[#FFFFFF] mt-5 p-2 border-2 border-[#F5F5F5] font-semibold text-sm rounded-xl flex items-center w-80 h-12">
-                            {{-- <input class="bg-transparent focus:outline-none" placeholder="Male" type="text"> --}}
+                            class="group focus-within:ring-4 bg-[#FFFFFF] mt-5 p-4 border-2 border-[#F5F5F5] font-semibold text-sm rounded-xl flex items-center w-80 h-12">
                             {{-- <button> --}}
                             <button class="flex items-center gap-x-2" type="button">
                                 <img src="{{ asset('images/profile-creation/ph.png') }}" alt="">
@@ -208,10 +202,31 @@
                             <input class="bg-transparent focus:outline-none" placeholder="+63" type="text">
                         </div>
                         {{-- Login --}}
-                        <div x-data="{ openVerify: false }" class="flex flex-col text-center mt-10">
+                        <div x-data="{ saveProfile: false }" class="flex flex-col text-center mt-10">
                             <button
                                 class="flex justify-center items-center py-3 bg-[#FFE600] gap-x-3  rounded-xl w-full hover:ring-4"
-                                type="button">Save</button>
+                                @click="saveProfile = !saveProfile " type="button">Save</button>
+                            {{-- Modal --}}
+                            <template x-if="saveProfile">
+                                <div
+                                    class="flex fixed inset-0 top-0 left-0 right-0 z-50 items-center justify-center w-full overflow-x-hidden overflow-y-auto bg-smoke-lighter">
+                                    {{-- Saved --}}
+                                    <div
+                                        class="animate__animated animate__fadeIn flex text-center flex-col items-center justify-center leading-none bg-white rounded-xl w-[550px] h-[377px]">
+                                        <img class="mt-2" src="{{ asset('images/profile-creation/secure.png') }}"
+                                            alt="">
+                                        <div class="space-y-5 leading-none">
+                                            <h1 class="font-bold text-2xl text-[#4CAF50]">Saved</h1>
+                                            <h2>Your profile has been updated</h2>
+                                        </div>
+                                        <a href="">
+                                            <button
+                                                class="cursor-pointer flex justify-center items-center py-3 text-[#FFFFFF] bg-[#4CAF50] gap-x-3 mt-11  rounded-xl w-80 hover:ring-4"
+                                                type="button">Close</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </template>
                         </div>
                     </form>
                 </div>
