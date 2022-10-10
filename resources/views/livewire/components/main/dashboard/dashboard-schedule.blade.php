@@ -244,12 +244,58 @@
                     </div>
                 </td>
                 {{-- Thursday --}}
-                <td scope="row" class="border-r p-1 border-[#A7A7A7] whitespace-nowrap ">
+                <td scope="row" class="border-r p-1 border-[#A7A7A7] ">
                     {{-- Name placeholder for the meantime --}}
-                    <div class="bg-white border rounded-md w-11">
+                    <div class="relative mb-[50px] z-50 w-full cursor-pointer">
+                        {{-- 1 --}}
+                        <div class="bg-white border absolute rounded-md group hover:z-50 w-11 hover:w-[127px]">
+                            <div
+                                class="flex flex-col justify-center border-t-8 border-[#59C3FF] overflow-hidden text-center rounded-md h-14">
+                                <span class="group-hover:hidden">JM</span>
+                                {{-- Show on hover --}}
+                                <div class="flex-col hidden group-hover:flex">
+                                    <span>Joselina Martina</span>
+                                    <span>Florida Velazco</span>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- 2 --}}
                         <div
-                            class="flex flex-col justify-center border-t-8 border-[#59C3FF] overflow-hidden text-center rounded-md h-14">
-                            <span>JM</span>
+                            class="group absolute bg-white border rounded-md ml-[26px] hover:z-50 w-11 hover:w-[127px]">
+                            <div
+                                class="flex flex-col justify-center border-t-8 border-[#EC671C] overflow-hidden text-center rounded-md h-14">
+                                <span class="group-hover:hidden">JM</span>
+                                {{-- Show on hover --}}
+                                <div class="flex-col hidden group-hover:flex">
+                                    <span>Joselina Martina</span>
+                                    <span>Florida Velazco</span>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- 3 --}}
+                        <div
+                            class="group absolute bg-white border rounded-md ml-[52px] hover:z-50 w-11 hover:w-[127px]">
+                            <div
+                                class="flex flex-col justify-center border-t-8 border-[#4CAF50] overflow-hidden text-center rounded-md h-14">
+                                <span class="group-hover:hidden">JM</span>
+                                {{-- Show on hover --}}
+                                <div class="flex-col hidden group-hover:flex">
+                                    <span>Joselina Martina</span>
+                                    <span>Florida Velazco</span>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- 4 --}}
+                        <div class="group absolute bg-white border rounded-md ml-[80px] w-11 hover:w-[127px]">
+                            <div
+                                class="flex flex-col justify-center border-t-8 border-[#EC671C] text-center rounded-md h-14">
+                                <span class="group-hover:hidden">JM</span>
+                                {{-- Show on hover --}}
+                                <div class="flex-col hidden group-hover:flex">
+                                    <span>Joselina Martina</span>
+                                    <span>Florida Velazco</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </td>
@@ -299,7 +345,34 @@
 
                 </td>
                 {{-- Friday --}}
-                <td scope="row" class="border-r p-1 border-[#A7A7A7] whitespace-nowrap ">
+               <td scope="row" class="relative border-r p-1 border-[#A7A7A7] ">
+                    {{-- Name placeholder for the meantime --}}
+                    <div class="absolute mb-[50px] z-50 w-full cursor-pointer">
+                        {{-- 1 --}}
+                        <div class="bg-white border absolute rounded-md group hover:z-50 w-16 hover:w-[127px]">
+                            <div
+                                class="flex flex-col justify-center border-t-8 border-[#59C3FF] overflow-hidden text-center rounded-md h-14">
+                                <span class="group-hover:hidden">Josefina Martina</span>
+                                {{-- Show on hover --}}
+                                <div class="flex-col hidden group-hover:flex">
+                                    <span>Joselina Martina</span>
+                                    <span>Florida Velazco</span>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- 2 --}}
+                        <div class="group absolute bg-white border rounded-md ml-11 hover:z-50 w-16 hover:w-[127px]">
+                            <div
+                                class="flex flex-col justify-center border-t-8 border-[#EC671C] overflow-hidden text-center rounded-md h-14">
+                                <span class="group-hover:hidden">Josefina Martina</span>
+                                {{-- Show on hover --}}
+                                <div class="flex-col hidden group-hover:flex">
+                                    <span>Joselina Martina</span>
+                                    <span>Florida Velazco</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
                 {{-- Saturday --}}
                 <td scope="row" class="p-1 border-[#A7A7A7] whitespace-nowrap ">
@@ -389,7 +462,34 @@
                     </div>
                 </td>
                 {{-- Monday --}}
-                <td scope="row" class="border-r p-1 border-[#A7A7A7] whitespace-nowrap ">
+                <td scope="row" class="border-r p-1 border-[#A7A7A7] ">
+                    {{-- Name placeholder for the meantime --}}
+                    <div class="relative mb-[50px] z-50 w-full cursor-pointer">
+                        {{-- 1 --}}
+                        <div class="bg-white border absolute rounded-md group hover:z-50 w-16 hover:w-[127px]">
+                            <div
+                                class="flex flex-col justify-center border-t-8 border-[#59C3FF] overflow-hidden text-center rounded-md h-14">
+                                <span class="group-hover:hidden">Josefina Martina</span>
+                                {{-- Show on hover --}}
+                                <div class="flex-col hidden group-hover:flex">
+                                    <span>Joselina Martina</span>
+                                    <span>Florida Velazco</span>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- 2 --}}
+                        <div class="group absolute bg-white border rounded-md ml-11 hover:z-50 w-16 hover:w-[127px]">
+                            <div
+                                class="flex flex-col justify-center border-t-8 border-[#EC671C] overflow-hidden text-center rounded-md h-14">
+                                <span class="group-hover:hidden">Josefina Martina</span>
+                                {{-- Show on hover --}}
+                                <div class="flex-col hidden group-hover:flex">
+                                    <span>Joselina Martina</span>
+                                    <span>Florida Velazco</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
                 {{-- Tuesday --}}
                 <td scope="row" class="border-r p-1 border-[#A7A7A7] whitespace-nowrap ">
@@ -500,7 +600,34 @@
                 <td scope="row" class="relative border-r p-1 border-[#A7A7A7] whitespace-nowrap ">
                 </td>
                 {{-- Thursday --}}
-                <td scope="row" class="border-r p-1 border-[#A7A7A7] whitespace-nowrap ">
+                <td scope="row" class="border-r p-1 border-[#A7A7A7] ">
+                    {{-- Name placeholder for the meantime --}}
+                    <div class="relative mb-[50px] z-50 w-full cursor-pointer">
+                        {{-- 1 --}}
+                        <div class="bg-white border absolute rounded-md group hover:z-50 w-16 hover:w-[127px]">
+                            <div
+                                class="flex flex-col justify-center border-t-8 border-[#59C3FF] overflow-hidden text-center rounded-md h-14">
+                                <span class="group-hover:hidden">Josefina Martina</span>
+                                {{-- Show on hover --}}
+                                <div class="flex-col hidden group-hover:flex">
+                                    <span>Joselina Martina</span>
+                                    <span>Florida Velazco</span>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- 2 --}}
+                        <div class="group absolute bg-white border rounded-md ml-11 hover:z-50 w-16 hover:w-[127px]">
+                            <div
+                                class="flex flex-col justify-center border-t-8 border-[#EC671C] overflow-hidden text-center rounded-md h-14">
+                                <span class="group-hover:hidden">Josefina Martina</span>
+                                {{-- Show on hover --}}
+                                <div class="flex-col hidden group-hover:flex">
+                                    <span>Joselina Martina</span>
+                                    <span>Florida Velazco</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
                 {{-- Friday --}}
                 <td scope="row" class="border-r p-1 border-[#A7A7A7] whitespace-nowrap ">
