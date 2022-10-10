@@ -1,6 +1,6 @@
 @extends('livewire.layouts.registration-base')
 @section('login-signup')
-    <form class="flex flex-col gap-y-4 " action="">
+    <form class="flex flex-col gap-y-4 " action="{{ route('login-password') }}">
         {{-- Email --}}
         <div class="space-y-2">
             <h2 class="text-[#FFFFFF]">Email</h2>
@@ -37,7 +37,7 @@
             {{-- Modal --}}
             <template x-if="openVerify">
                 <div
-                    class="flex fixed inset-0 top-0 left-0 right-0 z-50 items-center justify-center w-full overflow-x-hidden overflow-y-auto bg-smoke-lighter">
+                    class="fixed inset-0 top-0 left-0 right-0 z-50 flex items-center justify-center w-full overflow-x-hidden overflow-y-auto bg-smoke-lighter">
                     {{-- Processing --}}
                     <div class="absolute z-50">
                         <div
@@ -55,7 +55,7 @@
                                 Please check your email to verify your account.</h2>
                         </div>
                         <button
-                            class="cursor-pointer flex justify-center items-center py-3 text-[#FFFFFF] bg-[#4CAF50] gap-x-3  rounded-xl w-80 hover:ring-4"
+                            class="cursor-pointer flex justify-center items-center py-3 text-[#FFFFFF] bg-[#4CAF50] gap-x-3  rounded-xl w-80 hover:ring-4 transition-all duration-300 ease-linear"
                             type="button" @click=" openVerify = !openVerify ">Verify</button>
                     </div>
                 </div>

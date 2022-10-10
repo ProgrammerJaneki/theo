@@ -1,16 +1,16 @@
 @extends('livewire.layouts.registration-base')
 @section('main-base')
-    <div x-data="{ firstSlide: true, secondSlide: false, thirdSlide: false, fourthSlide: false }" class="flex justify-center items-center w-full ">
+    <div x-data="{ firstSlide: true, secondSlide: false, thirdSlide: false, fourthSlide: false }" class="flex items-center w-full -center ">
         {{-- 1 --}}
         <template x-if="firstSlide">
-            <div class="flex justify-center items-center w-full">
+            <div class="flex items-center justify-center w-full">
                 {{-- Left --}}
                 <div class="relative right-0 flex items-center justify-center w-7/12 bg-[#FFFFFF] ">
-                    <div class="animate__animated animate__fadeOutUpBig animate__delay-2s absolute  font-bold text-6xl ">
+                    <div class="absolute text-6xl font-bold animate__animated animate__fadeOutUpBig animate__delay-2s ">
                         Get Started...
                     </div>
                     <div
-                        class="animate__animated animate__fadeInUp animate__delay-2s flex flex-col px-12 lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
+                        class="flex flex-col px-12 animate__animated animate__fadeInUp animate__delay-2s lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
                         <div class="space-y-6">
                             <div class="flex gap-x-1">
                                 <div class="rounded-full w-3 h-3 bg-[#4CAF50]"></div>
@@ -37,18 +37,18 @@
                     </div>
                 </div>
                 {{-- Right --}}
-                <div class=" w-5/12  h-screen">
-                    <img class="animate__animated animate__fadeIn animate__delay-2s object-cover w-full h-screen"
+                <div class="w-5/12 h-screen ">
+                    <img class="object-cover w-full h-screen animate__animated animate__fadeIn animate__delay-2s"
                         src="{{ asset('images/profile-creation/slide1.png') }}" alt="">
                 </div>
             </div>
         </template>
         {{-- 2 --}}
         <template x-if="secondSlide">
-            <div class="animate__animated animate__fadeInRight flex justify-center items-center w-full">
+            <div class="flex items-center justify-center w-full animate__animated animate__fadeInRight">
                 {{-- Left --}}
                 <div class="right-0 flex items-center justify-center w-7/12 bg-[#FFFFFF] ">
-                    <div class=" flex flex-col px-12 lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
+                    <div class="flex flex-col px-12  lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
                         <div class="space-y-6">
                             <div class="flex gap-x-1">
                                 <div class="rounded-full w-3 h-3 bg-[#D9D9D9]"></div>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 {{-- Right --}}
-                <div class=" w-5/12  h-screen">
+                <div class="w-5/12 h-screen ">
                     <img class="object-cover w-full h-screen" src="{{ asset('images/profile-creation/slide2.png') }}"
                         alt="">
                 </div>
@@ -83,10 +83,10 @@
         </template>
         {{-- 3 --}}
         <template x-if="thirdSlide">
-            <div class="animate__animated animate__fadeInRight flex justify-center items-center w-full">
+            <div class="flex items-center justify-center w-full animate__animated animate__fadeInRight">
                 {{-- Left --}}
                 <div class="right-0 flex items-center justify-center w-7/12 bg-[#FFFFFF] ">
-                    <div class=" flex flex-col px-12 lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
+                    <div class="flex flex-col px-12  lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
                         <div class="space-y-6">
                             <div class="flex gap-x-1">
                                 <div class="rounded-full w-3 h-3 bg-[#D9D9D9]"></div>
@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 {{-- Right --}}
-                <div class=" w-5/12  h-screen">
+                <div class="w-5/12 h-screen ">
                     <img class="object-cover w-full h-screen" src="{{ asset('images/profile-creation/slide3.png') }}"
                         alt="">
                 </div>
@@ -121,10 +121,10 @@
         </template>
         {{-- 4 --}}
         <template x-if="fourthSlide">
-            <div class="animate__animated animate__fadeInUp flex justify-center items-center w-full">
+            <div class="flex items-center justify-center w-full animate__animated animate__fadeInUp">
                 {{-- Left --}}
                 <div class="right-0 flex items-center justify-center w-7/12 bg-[#FFFFFF] ">
-                    <div class=" flex flex-col px-12 lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
+                    <div class="flex flex-col px-12  lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
                         <div class="space-y-9">
                             <h2 class="text-2xl font-bold md:text-5xl ">Set up your <br> profile</h2>
                             <h4 class="text-2xl leading-none">To get started, you need to provide your <br> personal
@@ -202,14 +202,14 @@
                             <input class="bg-transparent focus:outline-none" placeholder="+63" type="text">
                         </div>
                         {{-- Login --}}
-                        <div x-data="{ saveProfile: false }" class="flex flex-col text-center mt-10">
+                        <div x-data="{ saveProfile: false }" class="flex flex-col mt-10 text-center">
                             <button
                                 class="flex justify-center items-center py-3 bg-[#FFE600] gap-x-3  rounded-xl w-full hover:ring-4"
                                 @click="saveProfile = !saveProfile " type="button">Save</button>
                             {{-- Modal --}}
                             <template x-if="saveProfile">
                                 <div
-                                    class="flex fixed inset-0 top-0 left-0 right-0 z-50 items-center justify-center w-full overflow-x-hidden overflow-y-auto bg-smoke-lighter">
+                                    class="fixed inset-0 top-0 left-0 right-0 z-50 flex items-center justify-center w-full overflow-x-hidden overflow-y-auto bg-smoke-lighter">
                                     {{-- Saved --}}
                                     <div
                                         class="animate__animated animate__fadeIn flex text-center flex-col items-center justify-center leading-none bg-white rounded-xl w-[550px] h-[377px]">
@@ -219,10 +219,8 @@
                                             <h1 class="font-bold text-2xl text-[#4CAF50]">Saved</h1>
                                             <h2>Your profile has been updated</h2>
                                         </div>
-                                        <a href="">
-                                            <button
-                                                class="cursor-pointer flex justify-center items-center py-3 text-[#FFFFFF] bg-[#4CAF50] gap-x-3 mt-11  rounded-xl w-80 hover:ring-4"
-                                                type="button">Close</button>
+                                        <a class="cursor-pointer flex justify-center items-center py-3 text-[#FFFFFF] bg-[#4CAF50] gap-x-3 mt-11  rounded-xl w-80 hover:ring-4"
+                                            href="{{ route('dashboard-section1') }}">Close
                                         </a>
                                     </div>
                                 </div>

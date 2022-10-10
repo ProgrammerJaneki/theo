@@ -2,7 +2,7 @@
 @section('login-signup')
     {{-- Login Form --}}
     <div class="my-0">
-        <form class="flex flex-col gap-y-4 " action="">
+        <form class="flex flex-col gap-y-4 " action="{{ route('profile-setup') }}">
             {{-- Email --}}
             <div class="space-y-2">
                 <h2 class="text-[#FFFFFF]">Email</h2>
@@ -34,10 +34,8 @@
             </div>
             {{-- Login --}}
             <div class="flex flex-col text-center gap-y-10 mt-9">
-                <a class="flex justify-center items-center py-3 bg-[#FFE600] gap-x-3  rounded-xl w-full hover:ring-4"
-                    href="{{ route('profile-setup') }}">
-                    <button type="submit">Login</button>
-                </a>
+                <input class="flex justify-center items-center py-3 bg-[#FFE600] gap-x-3  rounded-xl w-full hover:ring-4 cursor-pointer"
+                    type="submit" value="Login">
                 <a class="font-bold text-[#FFFFFF]" href="{{ 'login-forgot-password' }}">Forgot password?</a>
             </div>
         </form>
