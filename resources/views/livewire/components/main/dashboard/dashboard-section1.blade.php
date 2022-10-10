@@ -1,7 +1,8 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
-    <div class="w-full px-5 py-3 ">
-        <div class="px-5 bg-white rounded-md">
+    <div class="px-5 py-3 ml-[320px]">
+        {{-- Main Section --}}
+        <div class="px-5 bg-white rounded-md pb-9">
             {{-- Upper Part --}}
             <div class="flex items-center justify-between w-full pt-5 pb-7 gap-x-2">
                 {{-- Booked --}}
@@ -29,7 +30,6 @@
                             d="M21 28H3.5V21H21V14L31.5 24.5L21 35V28ZM56 0V45.5L35 56V45.5H14V31.5H17.5V42H35V10.5L49 3.5H17.5V17.5H14V0H56Z"
                             fill="#4CAF50" />
                     </svg>
-
                     {{-- 2 --}}
                     <div class="flex flex-col whitespace-nowrap">
                         <h2>Checked In</h2>
@@ -88,8 +88,8 @@
                             <svg class="w-6 h-6" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="0.5" y="0.5" width="21" height="21" rx="4.5"
                                     fill="white" stroke="currentColor" />
-                                <path d="M13.6667 5.66675L8.33332 11.0001L13.6667 16.3334" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M13.6667 5.66675L8.33332 11.0001L13.6667 16.3334" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
                         <span class="font-bold">AUGUST</span>
@@ -97,8 +97,8 @@
                             <svg class="w-6 h-6" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="21.5" y="21.5" width="21" height="21" rx="4.5"
                                     transform="rotate(180 21.5 21.5)" fill="white" stroke="currentColor" />
-                                <path d="M8.33331 16.3333L13.6666 10.9999L8.33331 5.66658" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M8.33331 16.3333L13.6666 10.9999L8.33331 5.66658" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
                     </div>
@@ -125,18 +125,27 @@
                 </div>
                 {{-- Right --}}
                 <div class="text-[#FFFFFF] flex items-center gap-x-1">
-                    <button class="text-xs py-2 rounded-sm bg-[#AF4C4C] w-[88px] h-9 hover:ring-2 transition-all duration-300 ease-linear" type="button">VIP Guest</button>
-                    <button class="text-xs py-2 rounded-sm bg-[#FFC702] w-[88px] h-9 hover:ring-2 transition-all duration-300 ease-linear" type="button">Loyalty
+                    <button
+                        class="text-xs py-2 rounded-sm bg-[#AF4C4C] w-[88px] h-9 hover:ring-2 transition-all duration-300 ease-linear"
+                        type="button">VIP Guest</button>
+                    <button
+                        class="text-xs py-2 rounded-sm bg-[#FFC702] w-[88px] h-9 hover:ring-2 transition-all duration-300 ease-linear"
+                        type="button">Loyalty
                         Guest</button>
-                    <button class="flex items-center text-left px-4  text-xs h-9 rounded-sm bg-[#59C3FF] w-[88px] hover:ring-2 transition-all duration-300 ease-linear"
+                    <button
+                        class="flex items-center text-left px-4  text-xs h-9 rounded-sm bg-[#59C3FF] w-[88px] hover:ring-2 transition-all duration-300 ease-linear"
                         type="button">Checkout Guest
                     </button>
-                    <button class="flex items-center text-left px-4  text-xs h-9 rounded-sm bg-[#4CAF50] w-[88px] hover:ring-2 transition-all duration-300 ease-linear"
+                    <button
+                        class="flex items-center text-left px-4  text-xs h-9 rounded-sm bg-[#4CAF50] w-[88px] hover:ring-2 transition-all duration-300 ease-linear"
                         type="button">In-House Guest
                     </button>
-                    <button class="text-xs py-2 rounded-sm bg-[#EC671C] w-[88px] h-9 hover:ring-2 transition-all duration-300 ease-linear" type="button">Future Guest</button>
+                    <button
+                        class="text-xs py-2 rounded-sm bg-[#EC671C] w-[88px] h-9 hover:ring-2 transition-all duration-300 ease-linear"
+                        type="button">Future Guest</button>
                 </div>
             </div>
+            <livewire:components.main.dashboard.dashboard-schedule />
         </div>
     </div>
 @endsection

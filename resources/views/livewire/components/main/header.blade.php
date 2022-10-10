@@ -1,4 +1,4 @@
-<div class="bg-[#FFFFFF] flex items-center justify-between px-8  w-full h-[110px]">
+<div class="bg-[#FFFFFF] flex items-center sticky top-0 z-50 justify-between px-8  w-full h-[110px]">
     {{-- Header --}}
     <img class="pr-[260px]" src="{{ asset('images/profile-creation/main-logo.png') }}" alt="">
     {{-- Middle --}}
