@@ -6,7 +6,7 @@
             {{-- Upper Part --}}
             <div class="flex items-center justify-between w-full pt-5 pb-7 gap-x-2">
                 {{-- Booked --}}
-                <a class="flex justify-center items-center gap-x-1 border-4 border-[#59C3FF] rounded-[20px] w-full max-w-[240px] h-[121px]"
+                <a class="z-40 flex justify-center items-center gap-x-1 border-4 border-[#59C3FF] rounded-[20px] w-full max-w-[240px] h-[121px]"
                     href="{{ route('login-password') }}">
                     {{-- 1 --}}
                     <svg class="w-14 h-14" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,7 +22,7 @@
                     </div>
                 </a>
                 {{-- Checked in --}}
-                <a class="flex justify-center items-center gap-x-1 border-4 border-[#4CAF50] rounded-[20px] w-full max-w-[240px] h-[121px]"
+                <a class="z-40 flex justify-center items-center gap-x-1 border-4 border-[#4CAF50] rounded-[20px] w-full max-w-[240px] h-[121px]"
                     href="{{ route('login-password') }}">
                     {{-- 1 --}}
                     <svg class="w-14 h-14" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@
                     </div>
                 </a>
                 {{-- Checked Out --}}
-                <a class="flex justify-center items-center gap-x-1 border-4 border-[#EC671C] rounded-[20px] w-full max-w-[240px] h-[121px]"
+                <a class="z-40 flex justify-center items-center gap-x-1 border-4 border-[#EC671C] rounded-[20px] w-full max-w-[240px] h-[121px]"
                     href="{{ route('login-password') }}">
                     {{-- 1 --}}
                     <svg class="w-14 h-14" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,7 +62,7 @@
                     </div>
                 </a>
                 {{-- Cancel --}}
-                <a class="flex justify-center items-center gap-x-1 border-4 border-[#EC671C] rounded-[20px] w-full max-w-[240px] h-[121px]"
+                <a class="z-40 flex justify-center items-center gap-x-1 border-4 border-[#EC671C] rounded-[20px] w-full max-w-[240px] h-[121px]"
                     href="{{ route('login-password') }}">
                     {{-- 1 --}}
                     <svg class="w-14 h-14" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +83,7 @@
             <div class="flex items-center justify-between w-full ">
                 {{-- Left --}}
                 <div class="flex items-center transition-all duration-300 ease-linear gap-x-12 xl:gap-x-24">
-                    <div class="flex items-center gap-x-2">
+                    <div class="z-40 flex items-center gap-x-2">
                         <button class="transition-all duration-300 ease-linear hover:text-[#4CAF50]" type="button">
                             <svg class="w-6 h-6" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="0.5" y="0.5" width="21" height="21" rx="4.5"
@@ -103,7 +103,7 @@
                         </button>
                     </div>
                     {{-- 2 --}}
-                    <div class="flex items-center gap-x-2">
+                    <div class="z-40 flex items-center gap-x-2">
                         <button class="transition-all duration-300 ease-linear hover:text-[#4CAF50]" type="button">
                             <svg class="w-6 h-6" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="0.5" y="0.5" width="21" height="21" rx="4.5"
@@ -124,7 +124,7 @@
                     </div>
                 </div>
                 {{-- Right --}}
-                <div class="text-[#FFFFFF] flex items-center gap-x-1">
+                <div class="text-[#FFFFFF] z-40 flex items-center gap-x-1">
                     <button
                         class="text-xs py-2 rounded-sm bg-[#AF4C4C] w-[88px] h-9 hover:ring-2 transition-all duration-300 ease-linear"
                         type="button">VIP Guest</button>
@@ -146,6 +146,8 @@
                 </div>
             </div>
             <livewire:components.main.dashboard.dashboard-schedule />
+            {{-- Revenue --}}
+            <livewire:components.main.dashboard.dashboard-revenue />
         </div>
     </div>
 @endsection

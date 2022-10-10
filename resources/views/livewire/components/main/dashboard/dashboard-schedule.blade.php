@@ -2,7 +2,7 @@
     <table class="w-full text-xs ">
         <thead class="text-xs border-b border-[#A7A7A7]">
             <tr>
-                <th scope="col" class="px-0 py-0 border-r border-[#A7A7A7] w-[96px]">Time</th>
+                <th scope="col" class=" px-0 py-0 border-r border-[#A7A7A7] w-[96px]">Time</th>
                 <th scope="col" class="px-0 py-0 border-r border-[#A7A7A7]">Sunday</th>
                 <th scope="col" class="px-6 py-3 border-r border-[#A7A7A7]">Monday</th>
                 <th scope="col" class="px-6 py-3 border-r border-[#A7A7A7]">Tuesday</th>
@@ -19,15 +19,49 @@
                     <span class="absolute top-0 ">1:00 am</span>
                 </td>
                 {{-- Sunday --}}
-                <td scope="row" class="border-r p-1 border-[#A7A7A7] whitespace-nowrap ">
+                <td x-data="{ customerInfo: false }" scope="row"
+                    class="relative border-r p-1 border-[#A7A7A7] whitespace-nowrap ">
                     {{-- Name placeholder for the meantime --}}
-                    <div class="w-full border rounded-md">
+                    <button class="w-full border rounded-md" @click="customerInfo = !customerInfo "
+                        @click.outside="customerInfo = false" type="button">
                         <div
                             class="flex flex-col justify-center w-full border-t-8 border-[#AF4C4C] overflow-hidden text-center rounded-md h-14">
                             <span>Josefina Martina</span>
                             <span>Florida Velazco</span>
                         </div>
-                    </div>
+                    </button>
+                    {{-- Modal Info --}}
+                    <template x-if="customerInfo">
+                        <div
+                            class="font-bold text-xs text-[#FFFFFF] z-50 absolute top-0 border rounded-md bg-[#333443] w-[232px] h-[173px]">
+                            <div class="bg-[#AF4C4C] w-full overflow-hidden px-2 py-3 rounded-t-md ">
+                                Josefina Martina Florida Velazco
+                            </div>
+                            {{-- Roomm Info --}}
+                            <div class="flex flex-col w-full p-2 gap-y-2">
+                                <div class="flex justify-between">
+                                    <span class="font-normal">Check-in</span>
+                                    <span>23 August, 2022</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="font-normal">Check-out</span>
+                                    <span>29 August, 2022</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="font-normal">Room</span>
+                                    <span>Standard Bedroom</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="font-normal">Guests</span>
+                                    <span>2 Adults, 1 Child</span>
+                                </div>
+                                <div class="text-right">
+                                    <hr>
+                                    <span class="text-right ">1:00 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
                 </td>
                 {{-- Monday --}}
                 <td scope="row" class="border-r p-1 border-[#A7A7A7] whitespace-nowrap ">
@@ -161,6 +195,15 @@
             <tr class="bg-white border-b ">
                 <td scope="row" class="relative px-6 py-0 border-r border-[#A7A7A7] whitespace-nowrap ">
                     <span class="absolute top-0 ">4:00 am</span>
+                    <div class="absolute -left-2">
+                        <svg width="233" height="16" viewBox="0 0 233 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <line x1="9.5" y1="7.5" x2="231.5" y2="7.49998" stroke="#4CAF50"
+                                stroke-width="3" stroke-linecap="round" />
+                            <circle cx="8" cy="8" r="8" fill="#4CAF50" />
+                        </svg>
+
+                    </div>
                 </td>
                 {{-- Sunday --}}
                 <td scope="row" class="border-r p-1 border-[#A7A7A7] whitespace-nowrap ">
@@ -190,15 +233,48 @@
                 <td scope="row" class="border-r p-1 border-[#A7A7A7] whitespace-nowrap ">
                 </td>
                 {{-- Saturday --}}
-                <td scope="row" class="p-1 border-[#A7A7A7] whitespace-nowrap ">
+                <td x-data="{ customerInfo2: false }" scope="row" class="relative p-1 border-[#A7A7A7] whitespace-nowrap ">
                     {{-- Name placeholder for the meantime --}}
-                    <div class="w-full border rounded-md">
+                    <button class="w-full border rounded-md" @click="customerInfo2 = !customerInfo2 "
+                        @click.outside="customerInfo2 = false" type="button">
                         <div
                             class="flex flex-col justify-center w-full border-t-8 border-[#FFC702] overflow-hidden text-center rounded-md h-14">
                             <span>Josefina Martina</span>
                             <span>Florida Velazco</span>
                         </div>
-                    </div>
+                    </button>
+                    {{-- Modal Info --}}
+                    <template x-if="customerInfo2">
+                        <div
+                            class="font-bold text-xs text-[#FFFFFF] absolute right-0 top-0 z-50 border rounded-md bg-[#333443] w-[232px] h-[173px]">
+                            <div class="bg-[#FFC702] w-full overflow-hidden px-2 py-3 rounded-t-md ">
+                                Josefina Martina Florida Velazco
+                            </div>
+                            {{-- Roomm Info --}}
+                            <div class="flex flex-col w-full p-2 gap-y-2">
+                                <div class="flex justify-between">
+                                    <span class="font-normal">Check-in</span>
+                                    <span>23 August, 2022</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="font-normal">Check-out</span>
+                                    <span>29 August, 2022</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="font-normal">Room</span>
+                                    <span>Standard Bedroom</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="font-normal">Guests</span>
+                                    <span>2 Adults, 1 Child</span>
+                                </div>
+                                <div class="text-right">
+                                    <hr>
+                                    <span class="text-right ">4:00 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
                 </td>
             </tr>
             {{-- 5 --}}
@@ -246,7 +322,7 @@
                 {{-- Thursday --}}
                 <td scope="row" class="border-r p-1 border-[#A7A7A7] ">
                     {{-- Name placeholder for the meantime --}}
-                    <div class="relative mb-[50px] z-50 w-full cursor-pointer">
+                    <div class="relative mb-[50px] z-40 w-full cursor-pointer">
                         {{-- 1 --}}
                         <div class="bg-white border absolute rounded-md group hover:z-50 w-11 hover:w-[127px]">
                             <div
@@ -261,7 +337,7 @@
                         </div>
                         {{-- 2 --}}
                         <div
-                            class="group absolute bg-white border rounded-md ml-[26px] hover:z-50 w-11 hover:w-[127px]">
+                            class="group absolute bg-white border rounded-md ml-[26px] hover:z-40 w-11 hover:w-[127px]">
                             <div
                                 class="flex flex-col justify-center border-t-8 border-[#EC671C] overflow-hidden text-center rounded-md h-14">
                                 <span class="group-hover:hidden">JM</span>
@@ -274,7 +350,7 @@
                         </div>
                         {{-- 3 --}}
                         <div
-                            class="group absolute bg-white border rounded-md ml-[52px] hover:z-50 w-11 hover:w-[127px]">
+                            class="group absolute bg-white border rounded-md ml-[52px] hover:z-40 w-11 hover:w-[127px]">
                             <div
                                 class="flex flex-col justify-center border-t-8 border-[#4CAF50] overflow-hidden text-center rounded-md h-14">
                                 <span class="group-hover:hidden">JM</span>
@@ -329,7 +405,7 @@
                 {{-- Tuesday --}}
                 <td scope="row" class="relative border-r p-1 border-[#A7A7A7] whitespace-nowrap ">
                     {{-- Name placeholder for the meantime --}}
-                    <div class="absolute left-0 z-40 w-full bg-white border rounded-md">
+                    <div class="absolute left-0 w-full bg-white border rounded-md">
                         <div
                             class="flex flex-col justify-center w-full border-t-8 border-[#59C3FF] overflow-hidden text-center rounded-md h-14">
                             <span>Josefina Martina</span>
@@ -345,9 +421,9 @@
 
                 </td>
                 {{-- Friday --}}
-               <td scope="row" class="relative border-r p-1 border-[#A7A7A7] ">
+                <td scope="row" class="relative border-r p-1 border-[#A7A7A7] ">
                     {{-- Name placeholder for the meantime --}}
-                    <div class="absolute mb-[50px] z-50 w-full cursor-pointer">
+                    <div class="absolute mb-[50px] z-40 w-full cursor-pointer">
                         {{-- 1 --}}
                         <div class="bg-white border absolute rounded-md group hover:z-50 w-16 hover:w-[127px]">
                             <div
@@ -464,9 +540,9 @@
                 {{-- Monday --}}
                 <td scope="row" class="border-r p-1 border-[#A7A7A7] ">
                     {{-- Name placeholder for the meantime --}}
-                    <div class="relative mb-[50px] z-50 w-full cursor-pointer">
+                    <div class="relative mb-[50px] w-full cursor-pointer">
                         {{-- 1 --}}
-                        <div class="bg-white border absolute rounded-md group hover:z-50 w-16 hover:w-[127px]">
+                        <div class="bg-white border absolute rounded-md group hover:z-40 w-16 hover:w-[127px]">
                             <div
                                 class="flex flex-col justify-center border-t-8 border-[#59C3FF] overflow-hidden text-center rounded-md h-14">
                                 <span class="group-hover:hidden">Josefina Martina</span>
@@ -478,7 +554,7 @@
                             </div>
                         </div>
                         {{-- 2 --}}
-                        <div class="group absolute bg-white border rounded-md ml-11 hover:z-50 w-16 hover:w-[127px]">
+                        <div class="group absolute bg-white border rounded-md ml-11 hover:z-40 w-16 hover:w-[127px]">
                             <div
                                 class="flex flex-col justify-center border-t-8 border-[#EC671C] overflow-hidden text-center rounded-md h-14">
                                 <span class="group-hover:hidden">Josefina Martina</span>
@@ -602,9 +678,9 @@
                 {{-- Thursday --}}
                 <td scope="row" class="border-r p-1 border-[#A7A7A7] ">
                     {{-- Name placeholder for the meantime --}}
-                    <div class="relative mb-[50px] z-50 w-full cursor-pointer">
+                    <div class="relative mb-[50px] z-40 w-full cursor-pointer">
                         {{-- 1 --}}
-                        <div class="bg-white border absolute rounded-md group hover:z-50 w-16 hover:w-[127px]">
+                        <div class="bg-white border absolute rounded-md group hover:z-40 w-16 hover:w-[127px]">
                             <div
                                 class="flex flex-col justify-center border-t-8 border-[#59C3FF] overflow-hidden text-center rounded-md h-14">
                                 <span class="group-hover:hidden">Josefina Martina</span>
@@ -616,7 +692,7 @@
                             </div>
                         </div>
                         {{-- 2 --}}
-                        <div class="group absolute bg-white border rounded-md ml-11 hover:z-50 w-16 hover:w-[127px]">
+                        <div class="group absolute bg-white border rounded-md ml-11 hover:z-40 w-16 hover:w-[127px]">
                             <div
                                 class="flex flex-col justify-center border-t-8 border-[#EC671C] overflow-hidden text-center rounded-md h-14">
                                 <span class="group-hover:hidden">Josefina Martina</span>

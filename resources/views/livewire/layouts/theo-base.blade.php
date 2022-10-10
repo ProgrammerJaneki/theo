@@ -9,7 +9,6 @@
             <div class="">
                 <div class="fixed w-full ">
                     <livewire:components.main.main-panel />
-                    {{-- @yield('main-theo') --}}
                 </div>
                 @yield('main-theo')
             </div>
