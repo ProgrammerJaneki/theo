@@ -64,7 +64,7 @@
                                     {{-- Modal --}}
                                     <template x-if="saveEmployee">
                                         <div
-                                            class="fixed inset-0 top-0 left-0 right-0 z-50 flex items-center justify-center w-full overflow-x-hidden overflow-y-auto bg-smoke-lighter">
+                                            class="fixed inset-0 top-0 left-0 right-0 z-50 flex items-center justify-center w-full overflow-x-hidden overflow-y-auto animate__animated animate__fadeIn animate__delay-1s bg-smoke-lighter">
                                             {{-- Saved --}}
                                             <div
                                                 class="animate__animated animate__bounceInUp animate__delay-1s flex text-center flex-col items-center justify-center leading-none bg-white rounded-xl w-[550px] h-[377px]">

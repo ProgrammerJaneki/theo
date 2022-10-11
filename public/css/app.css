@@ -558,6 +558,10 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.mx-4{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 .mt-28{
   margin-top: 7rem;
 }
@@ -665,6 +669,9 @@ video {
 }
 .mb-10{
   margin-bottom: 2.5rem;
+}
+.mr-5{
+  margin-right: 1.25rem;
 }
 .block{
   display: block;
@@ -912,6 +919,54 @@ video {
 .w-\[\]{
   width: ;
 }
+.w-\[500px\]{
+  width: 500px;
+}
+.w-\[704px\]{
+  width: 704px;
+}
+.w-\[800px\]{
+  width: 800px;
+}
+.w-\[858px\]{
+  width: 858px;
+}
+.w-\[868px\]{
+  width: 868px;
+}
+.w-\[888px\]{
+  width: 888px;
+}
+.w-\[898px\]{
+  width: 898px;
+}
+.w-\[998px\]{
+  width: 998px;
+}
+.w-\[958px\]{
+  width: 958px;
+}
+.w-\[928px\]{
+  width: 928px;
+}
+.w-\[918px\]{
+  width: 918px;
+}
+.w-\[910px\]{
+  width: 910px;
+}
+.w-\[900px\]{
+  width: 900px;
+}
+.w-\[880px\]{
+  width: 880px;
+}
+.w-\[850px\]{
+  width: 850px;
+}
+.w-\[860px\]{
+  width: 860px;
+}
 .max-w-\[380px\]{
   max-width: 380px;
 }
@@ -1155,6 +1210,11 @@ video {
   --tw-space-x-reverse: 0;
   margin-right: calc(-1px * var(--tw-space-x-reverse));
   margin-left: calc(-1px * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-5 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .overflow-hidden{
   overflow: hidden;
@@ -1611,6 +1671,10 @@ video {
   font-size: 3.75rem;
   line-height: 1;
 }
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
 .font-bold{
   font-weight: 700;
 }
@@ -1696,6 +1760,10 @@ video {
 .ring-\[\#FFFFFF\]{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
+}
+.ring-\[\#4CAF50\]{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(76 175 80 / var(--tw-ring-opacity));
 }
 .transition-all{
   transition-property: all;
@@ -1902,6 +1970,12 @@ video {
 .hover\:ring-1:hover{
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.hover\:ring-0:hover{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
