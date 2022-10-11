@@ -7,7 +7,7 @@
             <livewire:components.main.header />
             {{-- Left Panel --}}
             <div class="">
-                <div class="fixed w-full ">
+                <div class="fixed ">
                     <livewire:components.main.main-panel />
                 </div>
                 @yield('main-theo')
