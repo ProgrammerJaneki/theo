@@ -51,63 +51,22 @@
                         <div class="flex flex-col w-full text-xs gap-y-2">
                             <div class="flex items-center justify-between">
                                 <h2 class="text-2xl font-bold">EMP000001</h2>
-                                <div x-data="{ saveEmployee: false }" class="flex items-center gap-x-3">
-                                    <button
-                                        class="text-[#4CAF50] hover:text-[#FFFFFF] hover:bg-[#4CAF50] text-center py-2 border-2 rounded-md border-[#4CAF50] w-[123px] transition-all duration-150 ease-linear">
-                                        Save as draft
-                                    </button>
-                                    <button @click="saveEmployee = true"
-                                        class="text-[#FFFFFF] bg-[#4CAF50] hover:bg-[#4CAF50]/80 cursor-pointer text-center py-2 border-2 border-[#4CAF50] rounded-md w-[123px]"
-                                        type="button">
-                                        Save
-                                    </button>
-                                    {{-- Modal --}}
-                                    <template x-if="saveEmployee">
-                                        <div
-                                            class="fixed inset-0 top-0 left-0 right-0 z-50 flex items-center justify-center w-full overflow-x-hidden overflow-y-auto bg-smoke-lighter">
-                                            {{-- Saved --}}
-                                            <div
-                                                class="animate__animated animate__bounceInUp animate__delay-1s flex text-center flex-col items-center justify-center leading-none bg-white rounded-xl w-[550px] h-[377px]">
-                                                <img class="mt-2" src="{{ asset('images/profile-creation/secure.png') }}"
-                                                    alt="">
-                                                <div class="space-y-5 leading-none">
-                                                    <h1 class="font-bold text-2xl text-[#4CAF50]">Saved</h1>
-                                                    <h2>Your profile has been updated</h2>
-                                                </div>
-                                                <input
-                                                    class="cursor-pointer flex justify-center items-center py-3 text-[#FFFFFF] bg-[#4CAF50] gap-x-3 mt-11  rounded-xl w-80 hover:bg-[#4CAF50]/80"
-                                                    type="submit" value="Close">
-                                            </div>
-                                        </div>
-                                    </template>
+                                <div class="flex items-center gap-x-3">
+                                    <a class="text-[#FFFFFF] bg-[#4CAF50] hover:bg-[#4CAF50]/80 cursor-pointer text-center py-2 px-6 border-2 border-[#4CAF50] rounded-md "
+                                        href="{{ route('employe-list-section1') }}">
+                                        End Employment
+                                    </a>
                                 </div>
                             </div>
-                            <div class="flex ">
-                                {{-- Fname --}}
-                                <div class="flex flex-col">
-                                    <input class="border-b-2 pr-2 border-[#A7A7A7] focus:outline-none" type="text">
-                                    <span>First Name</span>
-                                </div>
-                                {{-- MI --}}
-                                <div class="flex flex-col">
-                                    <input class="border-b-2 pr-2 border-[#A7A7A7] focus:outline-none" type="text">
-                                    <span>M.I</span>
-                                </div>
-                                {{-- Lname --}}
-                                <div class="flex flex-col">
-                                    <input class="border-b-2 border-[#A7A7A7] focus:outline-none" type="text">
-                                    <span>Last Names</span>
-                                </div>
-                            </div>
+                            <h2 class="text-2xl font-bold">Juanito Manolito Pacholito</h2>
                             <div class="flex flex-col gap-y-3">
-                                <h2 class="text-[#4CAF50]">N/A</h2>
+                                <h2 class="text-[#4CAF50]">Administrator</h2>
                                 <div class="inline-block">
-                                    <h2>N/A, <span>N/A</span>, N/A</h2>
-                                    {{-- <h2>Male, <span>24</span>, Single</h2> --}}
+                                    <h2>Male,&nbsp;<span>24</span>,&nbsp;Single</h2>
                                 </div>
                                 <div
-                                    class="text-center font-bold bg-[#4CAF50]/25 text-[#4CAF50] rounded-lg py-1 px-4 max-w-[100px]">
-                                    Processing</div>
+                                    class="text-center font-bold bg-[#4CAF50]/25 text-[#4CAF50] rounded-lg py-1 px-7 max-w-[100px]">
+                                    Active</div>
                             </div>
                         </div>
                     </div>
