@@ -1,7 +1,7 @@
 @extends('livewire.layouts.base')
 @section('main-base')
     {{-- Will Contain the header and panel --}}
-    <div class="flex justify-center w-full bg-[#EAEAEA]">
+    <div class="flex justify-center w-full bg-[#EAEAEA] text-[#333443]">
         <section class="flex flex-col w-full">
             {{-- Header --}}
             <livewire:components.main.header />

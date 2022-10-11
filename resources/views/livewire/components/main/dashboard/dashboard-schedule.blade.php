@@ -33,7 +33,7 @@
                     {{-- Modal Info --}}
                     <template x-if="customerInfo">
                         <div
-                            class="font-bold text-xs text-[#FFFFFF] z-50 absolute top-0 border rounded-md bg-[#333443] w-[232px] h-[173px]">
+                            class="font-bold text-xs text-[#FFFFFF] z-40 absolute top-0 border rounded-md bg-[#333443] w-[232px] h-[173px]">
                             <div class="bg-[#AF4C4C] w-full overflow-hidden px-2 py-3 rounded-t-md ">
                                 Josefina Martina Florida Velazco
                             </div>
@@ -246,7 +246,7 @@
                     {{-- Modal Info --}}
                     <template x-if="customerInfo2">
                         <div
-                            class="font-bold text-xs text-[#FFFFFF] absolute right-0 top-0 z-50 border rounded-md bg-[#333443] w-[232px] h-[173px]">
+                            class="font-bold text-xs text-[#FFFFFF] absolute right-0 top-0 z-40 border rounded-md bg-[#333443] w-[232px] h-[173px]">
                             <div class="bg-[#FFC702] w-full overflow-hidden px-2 py-3 rounded-t-md ">
                                 Josefina Martina Florida Velazco
                             </div>
@@ -423,7 +423,7 @@
                 {{-- Friday --}}
                 <td scope="row" class="relative border-r p-1 border-[#A7A7A7] ">
                     {{-- Name placeholder for the meantime --}}
-                    <div class="absolute mb-[50px] z-40 w-full cursor-pointer">
+                    <div class="absolute mb-[50px] z-30 w-full cursor-pointer">
                         {{-- 1 --}}
                         <div class="bg-white border absolute rounded-md group hover:z-50 w-16 hover:w-[127px]">
                             <div

@@ -225,8 +225,8 @@
                     {{-- Calendar --}}
                     <livewire:components.main.dashboard.check-in.check-in-calendar />
                 </div>
-                {{-- Right --}}
-                <div class="border-2 border-[#AAAAAA] flex flex-col p-6 rounded-xl w-[339px] h-[708px]">
+                {{-- Right | Change to 708px later --}}
+                <div class="border-2 border-[#AAAAAA] flex flex-col p-6 rounded-xl w-[339px] h-[745px]">
                     <h1 class="font-bold">Reservation Summary</h1>
                     {{-- Reservation Info --}}
                     <div class="flex flex-col mt-5 text-xs">

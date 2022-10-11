@@ -16,5 +16,9 @@ Route::view('/signup/create-account', 'livewire/components/register/signup/signu
 Route::view('/dashboard', 'livewire/components/main/dashboard/dashboard-section1')->name('dashboard-section1');
 Route::view('/dashboard/check-in', 'livewire/components/main/dashboard/check-in/check-in')->name('check-in');
 
+// Employe List
+Route::view('/manpower', 'livewire/components/main/manpower/employe-list/employe-list-section1')->name('employe-list-section1');
+Route::view('/manpower/add-employee', 'livewire/components/main/manpower/employe-list/add-employee')->name('add-employee');
+
 // Route::view('/login-option', 'livewire/components/register/login/login-option')->name('login-option');
 // Route::view('/', 'livewire/layouts/registration-base')->name('registration');

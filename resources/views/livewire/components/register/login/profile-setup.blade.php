@@ -29,7 +29,7 @@
                                 type="button"> Skip
                             </button>
                             <button
-                                class="text-center text-[#FFFFFF] py-3 bg-[#4CAF50] border-2 border-[#4CAF50] hover:bg-[#4CA450]/70
+                                class="text-center text-[#FFFFFF] py-3 bg-[#4CAF50] border-2 border-[#4CAF50] hover:bg-[#4CA450]/80
                         transition-all duration-300 ease-linear rounded-xl w-[220px]"
                                 @click="firstSlide = !firstSlide, secondSlide = !secondSlide" type="button"> Next
                             </button>
@@ -48,7 +48,7 @@
             <div class="flex items-center justify-center w-full animate__animated animate__fadeInRight">
                 {{-- Left --}}
                 <div class="right-0 flex items-center justify-center w-7/12 bg-[#FFFFFF] ">
-                    <div class="flex flex-col px-12  lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
+                    <div class="flex flex-col px-12 lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
                         <div class="space-y-6">
                             <div class="flex gap-x-1">
                                 <div class="rounded-full w-3 h-3 bg-[#D9D9D9]"></div>
@@ -67,7 +67,7 @@
                                 type="button"> Skip
                             </button>
                             <button
-                                class="text-center text-[#FFFFFF] py-3 bg-[#4CAF50] border-2 border-[#4CAF50] hover:bg-[#4CA450]/70
+                                class="text-center text-[#FFFFFF] py-3 bg-[#4CAF50] border-2 border-[#4CAF50] hover:bg-[#4CA450]/80
                         transition-all duration-300 ease-linear rounded-xl w-[220px]"
                                 @click="secondSlide = !secondSlide, thirdSlide = !thirdSlide" type="button"> Next
                             </button>
@@ -86,7 +86,7 @@
             <div class="flex items-center justify-center w-full animate__animated animate__fadeInRight">
                 {{-- Left --}}
                 <div class="right-0 flex items-center justify-center w-7/12 bg-[#FFFFFF] ">
-                    <div class="flex flex-col px-12  lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
+                    <div class="flex flex-col px-12 lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
                         <div class="space-y-6">
                             <div class="flex gap-x-1">
                                 <div class="rounded-full w-3 h-3 bg-[#D9D9D9]"></div>
@@ -105,7 +105,7 @@
                                 type="button"> Skip
                             </button>
                             <button
-                                class="text-center text-[#FFFFFF] py-3 bg-[#4CAF50] border-2 border-[#4CAF50] hover:bg-[#4CA450]/70
+                                class="text-center text-[#FFFFFF] py-3 bg-[#4CAF50] border-2 border-[#4CAF50] hover:bg-[#4CA450]/80
                         transition-all duration-300 ease-linear rounded-xl w-[220px]"
                                 @click="thirdSlide = false, fourthSlide = true" type="button"> Next
                             </button>
@@ -124,7 +124,7 @@
             <div class="flex items-center justify-center w-full animate__animated animate__fadeInUp">
                 {{-- Left --}}
                 <div class="right-0 flex items-center justify-center w-7/12 bg-[#FFFFFF] ">
-                    <div class="flex flex-col px-12  lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
+                    <div class="flex flex-col px-12 lg:px-auto lg:mr-0 lg:ml-auto lg:pr-16 xl:pr-20 gap-y-11 items-right">
                         <div class="space-y-9">
                             <h2 class="text-2xl font-bold md:text-5xl ">Set up your <br> profile</h2>
                             <h4 class="text-2xl leading-none">To get started, you need to provide your <br> personal

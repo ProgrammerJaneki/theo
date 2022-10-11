@@ -175,7 +175,7 @@
                     </button>
                     {{-- dropdown --}}
                     <template x-if="codeType">
-                        <div class="absolute right-0 z-50 mt-1 bg-white border-2 rounded-sm w-[179px]">
+                        <div class="absolute right-0 z-50 mt-1 bg-white border-2 rounded-md w-[179px]">
                             <ul class="text-left ">
                                 <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Personal</li>
                                 <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Student</li>
