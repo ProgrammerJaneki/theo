@@ -66,7 +66,7 @@
                             <h2 class="font-bold">Gender</h2>
                             <div class="relative font-bold">
                                 <button @click="gender = !gender" @click.outside="gender = false"
-                                    class="flex justify-between items-center border-2 border-[#CACACA] rounded-md py-1 px-3 w-[219px] gap-x-1"
+                                    class="flex justify-between items-center border border-[#D9D9D9] rounded-md py-1 px-3 w-[219px] gap-x-1"
                                     type="button">
                                     <span class="">Male</span>
                                     <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
@@ -78,7 +78,7 @@
                                 </button>
                                 {{-- dropdown --}}
                                 <template x-if="gender">
-                                    <div class="absolute right-0 z-50 mt-1 bg-white border-2 rounded-md w-[219px]">
+                                    <div class="absolute right-0 z-50 mt-1 bg-white border border-[#D9D9D9] rounded-md w-[219px]">
                                         <ul class="text-left ">
                                             <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Female</li>
                                             <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Prefer not to</li>
@@ -92,7 +92,7 @@
                             <h2 class="font-bold">Martial Status</h2>
                             <div class="relative font-bold">
                                 <button @click="status = !status" @click.outside="status = false"
-                                    class="flex justify-between items-center border-2 border-[#CACACA] rounded-md py-1 px-3 w-[219px] gap-x-1"
+                                    class="flex justify-between items-center border border-[#D9D9D9] rounded-md py-1 px-3 w-[219px] gap-x-1"
                                     type="button">
                                     <span class="">Single</span>
                                     <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
@@ -105,7 +105,7 @@
                                 {{-- dropdown --}}
                                 <template x-if="status">
                                     <div
-                                        class="absolute bottom-0 mb-10 z-50 mt-1 bg-white border-2 rounded-md w-[219px]">
+                                        class="absolute bottom-0 mb-10 z-50 mt-1 bg-white border border-[#D9D9D9] rounded-md w-[219px]">
                                         <ul class="text-left ">
                                             <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Married</li>
                                             <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Separated</li>
@@ -119,7 +119,7 @@
                             <h2 class="font-bold">Nationality</h2>
                             <div class="relative font-bold">
                                 <button @click="nationality = !nationality" @click.outside="nationality = false"
-                                    class="flex justify-between items-center border-2 border-[#CACACA] rounded-md py-1 px-3 w-[219px] gap-x-1"
+                                    class="flex justify-between items-center border border-[#D9D9D9] rounded-md py-1 px-3 w-[219px] gap-x-1"
                                     type="button">
                                     <span class="">Filipino</span>
                                     <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
@@ -132,7 +132,7 @@
                                 {{-- dropdown --}}
                                 <template x-if="nationality">
                                     <div
-                                        class="absolute bottom-0 mb-10 z-50 mt-1 bg-white border-2 rounded-md w-[219px]">
+                                        class="absolute bottom-0 mb-10 z-50 mt-1 bg-white border border-[#D9D9D9] rounded-md w-[219px]">
                                         <ul class="text-left ">
                                             <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">American</li>
                                             <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Korean</li>
@@ -173,7 +173,7 @@
                         <h2 class="font-bold">Other Valid I.D (Optional)</h2>
                         <div class="relative font-bold">
                             <button @click="idOption = !idOption" @click.outside="idOption = false"
-                                class="flex justify-between items-center border-2 border-[#CACACA] rounded-md py-1 px-3 w-[200px] gap-x-1"
+                                class="flex justify-between items-center border border-[#D9D9D9] rounded-md py-1 px-3 w-[200px] gap-x-1"
                                 type="button">
                                 <span class="">Filipino</span>
                                 <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
@@ -185,7 +185,7 @@
                             </button>
                             {{-- dropdown --}}
                             <template x-if="idOption">
-                                <div class="absolute right-0 z-50 mt-1 bg-white border-2 rounded-md w-[200px]">
+                                <div class="absolute right-0 z-50 mt-1 bg-white border border-[#D9D9D9] rounded-md w-[200px]">
                                     <ul class="text-left ">
                                         <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">American</li>
                                         <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Korean</li>

@@ -72,7 +72,7 @@
                                                     alt="">
                                                 <div class="space-y-5 leading-none">
                                                     <h1 class="font-bold text-2xl text-[#4CAF50]">Saved</h1>
-                                                    <h2>Your profile has been updated</h2>
+                                                    <h2>Employee data has been saved successfully</h2>
                                                 </div>
                                                 <input
                                                     class="cursor-pointer flex justify-center items-center py-3 text-[#FFFFFF] bg-[#4CAF50] gap-x-3 mt-11  rounded-xl w-80 hover:bg-[#4CAF50]/80"

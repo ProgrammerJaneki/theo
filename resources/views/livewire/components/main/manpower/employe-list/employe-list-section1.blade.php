@@ -45,7 +45,7 @@
                     <h2>Filter by:</h2>
                     <div class="relative font-bold">
                         <button @click="filterBy = !filterBy" @click.outside="filterBy = false"
-                            class="flex items-center border-2 border-[#CACACA] rounded-md py-1 pl-3 pr-2 gap-x-5"
+                            class="flex items-center border border-[#D9D9D9] rounded-md py-1 pl-3 pr-2 gap-x-5"
                             type="button">
                             <span class="">Status</span>
                             <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
@@ -57,7 +57,7 @@
                         </button>
                         {{-- dropdown --}}
                         <template x-if="filterBy">
-                            <div class="absolute mt-1 right-0 z-50 bg-white border-2 rounded-md w-[135px]">
+                            <div class="absolute mt-1 right-0 z-50 bg-white border border-[#D9D9D9] rounded-md w-[135px]">
                                 <ul class="text-left ">
                                     <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Employee No.</li>
                                     <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Age</li>
@@ -71,7 +71,7 @@
                     <h2>Show only:</h2>
                     <div class="relative font-bold">
                         <button @click="showOnly = !showOnly" @click.outside="showOnly = false"
-                            class="flex items-center border-2 border-[#CACACA] rounded-md py-1 pl-3 pr-2 gap-x-5"
+                            class="flex items-center border border-[#D9D9D9] rounded-md py-1 pl-3 pr-2 gap-x-5"
                             type="button">
                             <span class="">Active</span>
                             <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
@@ -83,7 +83,7 @@
                         </button>
                         {{-- dropdown --}}
                         <template x-if="showOnly">
-                            <div class="absolute mt-1 right-0 z-50 bg-white border-2 rounded-md w-[135px]">
+                            <div class="absolute mt-1 right-0 z-50 bg-white border border-[#D9D9D9] rounded-md w-[135px]">
                                 <ul class="text-left ">
                                     <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Non-Active</li>
                                     <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">On Leave</li>
@@ -97,7 +97,7 @@
                     <h2>Order:</h2>
                     <div class="relative font-bold">
                         <button @click="orderBy = !orderBy" @click.outside="orderBy = false"
-                            class="flex items-center border-2 border-[#CACACA] rounded-md py-1 pl-3 pr-2 gap-x-5"
+                            class="flex items-center border border-[#D9D9D9] rounded-md py-1 pl-3 pr-2 gap-x-5"
                             type="button">
                             <span class="">Newest - Oldest</span>
                             <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
@@ -109,7 +109,7 @@
                         </button>
                         {{-- dropdown --}}
                         <template x-if="orderBy">
-                            <div class="absolute mt-1 right-0 z-50 bg-white border-2 rounded-md w-[135px]">
+                            <div class="absolute mt-1 right-0 z-50 bg-white border border-[#D9D9D9] rounded-md w-[135px]">
                                 <ul class="text-left ">
                                     <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Oldest - Newest</li>
                                     <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Date</li>
