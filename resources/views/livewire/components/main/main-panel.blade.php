@@ -110,9 +110,9 @@
                             </a>
                         </li>
                         <li
-                            class="{{ Request::is('') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'bg-transparent hover:bg-[#FFFFFF] hover:text-[#4CAF50] text-[#FFFFFF]' }}">
+                            class="{{ Request::is('manpower/jobs') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'bg-transparent hover:bg-[#FFFFFF] hover:text-[#4CAF50] text-[#FFFFFF]' }}">
                             <a class="flex items-center py-2 pl-12 gap-x-3"
-                                href="">
+                                href="{{ route('jobs-section1') }}">
                                 <svg class="w-6 h-6" viewBox="0 0 15 15" fill="currentColor"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path

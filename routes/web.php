@@ -23,5 +23,9 @@ Route::view('/manpower/employe-list/new-employee', 'livewire/components/main/man
 
 // Schedules
 Route::view('/manpower/schedules', 'livewire/components/main/manpower/schedules/schedules-section1')->name('schedules-section1');
+
+// Jobs
+Route::view('/manpower/jobs', 'livewire/components/main/manpower/jobs/jobs-section1')->name('jobs-section1');
+Route::view('/manpower/jobs/add-job', 'livewire/components/main/manpower/jobs/add-job')->name('add-job');
 // Route::view('/login-option', 'livewire/components/register/login/login-option')->name('login-option');
 // Route::view('/', 'livewire/layouts/registration-base')->name('registration');
