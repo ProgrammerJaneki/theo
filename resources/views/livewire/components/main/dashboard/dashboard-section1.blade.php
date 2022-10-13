@@ -6,8 +6,8 @@
             {{-- Upper Part --}}
             <div class="flex items-center justify-between w-full pt-5 pb-7 gap-x-2">
                 {{-- Booked --}}
-                <a class="z-40 flex justify-center items-center gap-x-1 border-4 border-[#59C3FF] rounded-[20px] w-full max-w-[240px] h-[121px]"
-                    href="{{ route('login-password') }}">
+                <a class="z-40 flex justify-center items-center gap-x-1 border-2 border-[#59C3FF] rounded-[20px] w-full max-w-[240px] h-[121px]"
+                    href="{{ route('income-section1') }}">
                     {{-- 1 --}}
                     <svg class="w-14 h-14" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -22,8 +22,8 @@
                     </div>
                 </a>
                 {{-- Checked in --}}
-                <a class="z-40 flex justify-center items-center gap-x-1 border-4 border-[#4CAF50] rounded-[20px] w-full max-w-[240px] h-[121px]"
-                    href="{{ route('login-password') }}">
+                <a class="z-40 flex justify-center items-center gap-x-1 border-2 border-[#4CAF50] rounded-[20px] w-full max-w-[240px] h-[121px]"
+                    href="{{ route('check-in') }}">
                     {{-- 1 --}}
                     <svg class="w-14 h-14" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -38,8 +38,8 @@
                     </div>
                 </a>
                 {{-- Checked Out --}}
-                <a class="z-40 flex justify-center items-center gap-x-1 border-4 border-[#EC671C] rounded-[20px] w-full max-w-[240px] h-[121px]"
-                    href="{{ route('login-password') }}">
+                <a class="z-40 flex justify-center items-center gap-x-1 border-2 border-[#EC671C] rounded-[20px] w-full max-w-[240px] h-[121px]"
+                    href="">
                     {{-- 1 --}}
                     <svg class="w-14 h-14" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_296_2072)">
@@ -62,8 +62,8 @@
                     </div>
                 </a>
                 {{-- Cancel --}}
-                <a class="z-40 flex justify-center items-center gap-x-1 border-4 border-[#EC671C] rounded-[20px] w-full max-w-[240px] h-[121px]"
-                    href="{{ route('login-password') }}">
+                <a class="z-40 flex justify-center items-center gap-x-1 border-2 border-[#EC671C] rounded-[20px] w-full max-w-[240px] h-[121px]"
+                    href="">
                     {{-- 1 --}}
                     <svg class="w-14 h-14" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

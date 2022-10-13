@@ -166,7 +166,7 @@
                             </div>
                             {{-- Date of Birth --}}
                             <div class="space-y-2">
-                                <h2 class="text-[#FFFFFF]">Password</h2>
+                                <h2 class="text-[#FFFFFF]">Date of Birth</h2>
                                 <div
                                     class="group focus-within:ring-4 bg-[#FFFFFF] py-2 px-5 border-2 border-[#F5F5F5] font-semibold text-sm rounded-xl flex items-center justify-between w-80 h-12">
                                     <input class="bg-transparent focus:outline-none" placeholder="MM/DD/YYYY"

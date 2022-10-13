@@ -93,3 +93,79 @@
     <div class="border-2 border-[#A7A7A7] rounded-[20px] w-[356px] h-[298px]">
     </div>
 </div>
+
+
+@push('head')
+<link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.1.0/dist/flowbite.min.css" />
+<script src="https://unpkg.com/@themesberg/flowbite@1.1.0/dist/flowbite.bundle.js"></script>
+@endpush
+
+@push('js')
+    <style>
+        /* CHECKBOX TOGGLE SWITCH */
+        /* @apply rules for documentation, these do not work as inline style */
+        #toggle-example {
+        right: 0;
+        border-color: #4CAF50;
+        }
+        #toggle-example + .toggle-label {
+        background-color: #4CAF50;
+        }
+    </style>
+    <style>
+        #chart {
+            height: 440px;
+        }
+    </style>
+    <script>
+        $(() => {
+            $('#chart').dxChart({
+                dataSource,
+                series: {
+                    argumentField: 'day',
+                    valueField: 'greenbar',
+                    name: 'Revenue',
+                    type: 'bar',
+                    color: '#4CAF50',
+                },
+            });
+        });
+        const dataSource = [{
+            day: 'Jan',
+            greenbar: 730,
+        }, {
+            day: 'Feb',
+            greenbar: 100,
+        }, {
+            day: 'Mar',
+            greenbar: 230,
+        }, {
+            day: 'April',
+            greenbar: 200,
+        }, {
+            day: 'May',
+            greenbar: 230,
+        }, {
+            day: 'Jun',
+            greenbar: 230,
+        }, {
+            day: 'Jul',
+            greenbar: 50,
+        }, {
+            day: 'Aug',
+            greenbar: 650,
+        }, {
+            day: 'Sep',
+            greenbar: 950,
+        }, {
+            day: 'Oct',
+            greenbar: 850,
+        }, {
+            day: 'Nov',
+            greenbar: 930,
+        }, {
+            day: 'Dec',
+            greenbar: 860,
+        }];
+    </script>
+@endpush

@@ -10,9 +10,11 @@
     {{-- Alphine --}}
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     {{-- Swiper --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     {{-- Animate CSS --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    @stack('head')
     <style>
         [x-cloak] {
             display: none !important;
@@ -21,9 +23,10 @@
 
 </head>
 
-<body class="antialiased">
+<body class="antialiased ">
     @yield('main-base')
 
+    @stack('js')
     <livewireScripts />
 </body>
 

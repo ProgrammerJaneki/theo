@@ -1,9 +1,9 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
     <div class="px-5 py-3 ml-[320px]">
-        <div class="bg-white rounded-md px-9 pb-9">
+        <div class="bg-white rounded-md px-7 pb-9">
             {{-- Top --}}
-            <div x-data="{ showAll: true, showPublished: false, showDraft: false, showSaved: false }" class="flex items-center justify-between text-xs w-full pt-5 pb-0 ">
+            <div x-data="{ showAll: true, showPublished: false, showDraft: false, showSaved: false }" class="flex items-center justify-between w-full pt-5 pb-0 text-xs ">
                 {{-- Left --}}
                 <div class="flex">
                     <button @click="showAll = true, showPublished = false, showDraft = false, showSaved = false"
@@ -20,7 +20,7 @@
                         type="button">Draft</button>
                     <button @click="showSaved = true, showAll = false, showPublished = false, showDraft = false"
                         :class=" showSaved ? 'text-[#FFFFFF] bg-[#4CAF50]' : 'text-[#333443] bg-[#D9D9D9]'"
-                        class="py-3 px-8 rounded-r-md transition-all duration-150 ease-linear" type="button">Saved</button>
+                        class="px-8 py-3 transition-all duration-150 ease-linear rounded-r-md" type="button">Saved</button>
                 </div>
                 {{-- Right --}}
                 <a class="bg-[#4CAF50] text-[#FFFFFF] flex items-center py-3 px-6 gap-x-2 rounded-md text-xs hover:bg-[#4CAF50]/80 transition-all duration-150 ease-linear"
@@ -103,7 +103,7 @@
             </div>
 
             {{-- Job Info --}}
-            <div class="flex flex-wrap gap-x-3 gap-y-9 mt-9 w-full">
+            <div class="flex flex-wrap w-full gap-x-4 gap-y-9 mt-9">
                 {{-- 1 --}}
                 <div class="flex flex-col py-5 px-6 border-y-4 border-[#4CAF50] rounded-md w-[238px] h-[296px] shadow-lg">
                     {{-- top --}}
@@ -111,7 +111,7 @@
                         <h2>House Keeping</h2>
                         <h2 class="font-bold">Room Attendant</h2>
                     </div>
-                    <div class="leading-none space-y-5 mt-12">
+                    <div class="mt-12 space-y-5 leading-none">
                         <h2>Applications</h2>
                         <div class="flex gap-x-7">
                             <h2>Total:</h2>
@@ -138,7 +138,7 @@
                         <h2>Kitchen</h2>
                         <h2 class="font-bold">Line Cook</h2>
                     </div>
-                    <div class="leading-none space-y-5 mt-12">
+                    <div class="mt-12 space-y-5 leading-none">
                         <h2>Applications</h2>
                         <div class="flex gap-x-7">
                             <h2>Total:</h2>
@@ -186,7 +186,7 @@
                         <h2>Front Office</h2>
                         <h2 class="font-bold">Receptionist</h2>
                     </div>
-                    <div class="leading-none space-y-5 mt-12">
+                    <div class="mt-12 space-y-5 leading-none">
                         <h2>Applications</h2>
                         <div class="flex gap-x-7">
                             <h2>Total:</h2>
@@ -234,7 +234,7 @@
                         <h2>Sales & Marketing</h2>
                         <h2 class="font-bold">Director of Sales & Marketing</h2>
                     </div>
-                    <div class="leading-none space-y-5 mt-12">
+                    <div class="mt-12 space-y-5 leading-none">
                         <h2>Applications</h2>
                         <div class="flex gap-x-7">
                             <h2>Total:</h2>
@@ -261,7 +261,7 @@
                         <h2>IT</h2>
                         <h2 class="font-bold">Network Administrator</h2>
                     </div>
-                    <div class="leading-none space-y-5 mt-12">
+                    <div class="mt-12 space-y-5 leading-none">
                         <h2>Applications</h2>
                         <div class="flex gap-x-7">
                             <h2>Total:</h2>

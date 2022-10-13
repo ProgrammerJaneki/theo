@@ -5,8 +5,8 @@
         <div class="bg-white rounded-md px-9 pb-9">
             {{-- Upper Part --}}
             <div class="flex items-center justify-between w-full pt-5 pb-0 ">
-                <a
-                    class="bg-[#4CAF50] text-[#FFFFFF] flex items-center py-3 px-6 gap-x-2 rounded-md text-xs hover:bg-[#4CAF50]/80 transition-all duration-150 ease-linear" href="{{ route('add-employee') }}">
+                <a class="bg-[#4CAF50] text-[#FFFFFF] flex items-center py-3 px-6 gap-x-2 rounded-md text-xs hover:bg-[#4CAF50]/80 transition-all duration-150 ease-linear"
+                    href="{{ route('add-employee') }}">
                     <svg class="w-4 h-4" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M14 1C14.2652 1 14.5196 1.10536 14.7071 1.29289C14.8946 1.48043 15 1.73478 15 2V14C15 14.2652 14.8946 14.5196 14.7071 14.7071C14.5196 14.8946 14.2652 15 14 15H2C1.73478 15 1.48043 14.8946 1.29289 14.7071C1.10536 14.5196 1 14.2652 1 14V2C1 1.73478 1.10536 1.48043 1.29289 1.29289C1.48043 1.10536 1.73478 1 2 1H14ZM2 0C1.46957 0 0.960859 0.210714 0.585786 0.585786C0.210714 0.960859 0 1.46957 0 2L0 14C0 14.5304 0.210714 15.0391 0.585786 15.4142C0.960859 15.7893 1.46957 16 2 16H14C14.5304 16 15.0391 15.7893 15.4142 15.4142C15.7893 15.0391 16 14.5304 16 14V2C16 1.46957 15.7893 0.960859 15.4142 0.585786C15.0391 0.210714 14.5304 0 14 0L2 0Z"
@@ -130,31 +130,49 @@
                         </div>
                     </div>
                     {{-- Page nav --}}
-                    <div class="flex items-center space-x-4">
-                        {{-- Left Arrow --}}
-                        <button class="hover:text-[#4CAF50]">
-                            <svg class="w-3 h-3" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7 13L1 7L7 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        {{-- List Identifier --}}
-                        <div class="inline-flex space-x-2 font-bold">
-                            <button class="text-[#4CAF50]">1</button>
-                            <button class="">2</button>
-                            <button class="">3</button>
-                            <button class="">4</button>
-                            <button class="">5</button>
-                        </div>
-                        {{-- Right Arrow --}}
-                        <button class="hover:text-[#4CAF50]">
-                            <svg class="w-3 h-3" viewBox="0 0 8 14" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 13L7 7L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="inline-flex items-center -space-x-px">
+                            <li>
+                                <a href="" class="block py-2 pr-4 ml-0 leading-tight bg-white hover:text-[#4CAF50]">
+                                    <span class="sr-only">Previous</span>
+                                    <svg class="w-4 h-4" viewBox="0 0 8 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 13L1 7L7 1" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="py-2 px-2 leading-tight bg-white text-[#4CAF50] ">1</a>
+                            </li>
+                            <li>
+                                <a href=""
+                                    class="py-2 px-2 leading-tight text-[#6C6C6C]  bg-white hover:text-[#4CAF50]">2</a>
+                            </li>
+                            <li>
+                                <a href=""
+                                    class="py-2 px-2 leading-tight text-[#6C6C6C]  bg-white hover:text-[#4CAF50]">3</a>
+                            </li>
+                            <li>
+                                <a href=""
+                                    class="py-2 px-2 leading-tight text-[#6C6C6C]  bg-white hover:text-[#4CAF50]">4</a>
+                            </li>
+                            <li>
+                                <a href=""
+                                    class="py-2 px-2 leading-tight text-[#6C6C6C]  bg-white hover:text-[#4CAF50]">5</a>
+                            </li>
+                            <li>
+                                <a href="" class="block py-2 pl-4 leading-tight bg-white hover:text-[#4CAF50]">
+                                    <span class="sr-only">Next</span>
+                                    <svg class="w-4 h-4" viewBox="0 0 8 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 13L7 7L1 1" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
         </div>
     </div>

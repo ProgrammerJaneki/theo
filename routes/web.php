@@ -27,5 +27,16 @@ Route::view('/manpower/schedules', 'livewire/components/main/manpower/schedules/
 // Jobs
 Route::view('/manpower/jobs', 'livewire/components/main/manpower/jobs/jobs-section1')->name('jobs-section1');
 Route::view('/manpower/jobs/add-job', 'livewire/components/main/manpower/jobs/add-job')->name('add-job');
+Route::view('/manpower/jobs/job-info', 'livewire/components/main/manpower/jobs/job-info')->name('job-info');
+
+// Transactions
+Route::view('/transactions/income', 'livewire/components/main/transactions/income/income-section1')->name('income-section1');
+Route::view('/transactions/expenses', 'livewire/components/main/transactions/expenses/expenses-section1')->name('expenses-section1');
+Route::view('/transactions/audit', 'livewire/components/main/transactions/audit/audit-section1')->name('audit-section1');
+
+// Guests
+Route::view('/guests/database', 'livewire/components/main/guests/database/database-section1')->name('database-section1');
+Route::view('/guests/reviews', 'livewire/components/main/guests/database/database-section1')->name('reviews-section1');
+
 // Route::view('/login-option', 'livewire/components/register/login/login-option')->name('login-option');
 // Route::view('/', 'livewire/layouts/registration-base')->name('registration');
