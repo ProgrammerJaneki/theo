@@ -36,7 +36,12 @@ Route::view('/transactions/audit', 'livewire/components/main/transactions/audit/
 
 // Guests
 Route::view('/guests/database', 'livewire/components/main/guests/database/database-section1')->name('database-section1');
-Route::view('/guests/reviews', 'livewire/components/main/guests/database/database-section1')->name('reviews-section1');
+Route::view('/guests/reviews', 'livewire/components/main/guests/reviews/reviews-section1')->name('reviews-section1');
+
+// Inventory
+Route::view('/inventory/facilities/standard-bedroom', 'livewire/components/main/inventory/facilities/sub-pages/standard-bedroom')->name('standard-bedroom');
+Route::view('/inventory/amenities', 'livewire/components/main/inventory/amenities/amenities-section1')->name('amenities-section1');
+Route::view('/inventory/maintenance', 'livewire/components/main/inventory/amenities/amenities-section1')->name('maintenance-section1');
 
 // Route::view('/login-option', 'livewire/components/register/login/login-option')->name('login-option');
 // Route::view('/', 'livewire/layouts/registration-base')->name('registration');

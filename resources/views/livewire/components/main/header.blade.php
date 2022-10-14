@@ -1,4 +1,4 @@
-<div class="bg-[#FFFFFF] flex items-center sticky top-0 z-50 justify-between border-b px-8  w-full h-[110px]">
+<div class="bg-[#FFFFFF] flex items-center sticky top-0 z-50 justify-between border-b pl-5 pr-11  w-full h-[110px]">
     {{-- Header --}}
     <img class="pr-[260px]" src="{{ asset('images/profile-creation/main-logo.png') }}" alt="">
     {{-- Middle --}}
@@ -35,7 +35,7 @@
             </button>
         </div>
         {{-- 3 --}}
-        <div class="flex items-center gap-x-2 ">
+        <div class="flex items-center gap-x-2">
             <div class="flex flex-col text-right whitespace-nowrap">
                 <h2 class="font-bold">Juancho Manolo</h2>
                 <span class="text-[#4CAF50]">Admin</span>

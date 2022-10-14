@@ -26,8 +26,9 @@
 <body class="antialiased ">
     @yield('main-base')
 
-    @stack('js')
+    
     <livewireScripts />
+    @stack('scripts')
 </body>
 
 </html>
