@@ -12,7 +12,7 @@
                     </svg>
                 </button>
                 {{-- Slider --}}
-                <div class="relative flex w-full overflow-hidden py-1 ani-slider ">
+                <div class="relative flex w-full py-1 overflow-hidden ani-slider ">
                     {{-- Slides --}}
                     <div class="absolute px-2 ani-slide">
                         <img class="rounded-full hover:ring-2 ring-[#4CAF50]"
@@ -73,66 +73,120 @@
                     </svg>
                 </button>
             </div>
-            {{-- Info --}}
-            <div x-data="{ monthOption: false, deptOption: false }" class="flex items-center text-xs mt-16">
+            {{-- Dropdowns --}}
+            <div x-data="{ monthOption: false, deptOption: false }" class="flex items-center mt-16 text-xs">
                 {{-- 1 --}}
                 <div class="flex items-center gap-x-7">
-                    <h2>25 August, 2022</h2>
+                    <h2 class="font-bold whitespace-nowrap">25 August, 2022</h2>
                     <div class="flex items-center gap-x-4">
-                        <h2>Month</h2>
-                        <div class="relative font-bold">
-                            <button @click="monthOption = !monthOption" @click.outside="monthOption = false"
-                                class="flex justify-between items-center border border-[#D9D9D9] rounded-md py-1 px-2 w-[135px] gap-x-1"
-                                type="button">
-                                <span class="">Month</span>
-                                <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M5.24701 7.14L0.451011 1.658C-0.114989 1.013 0.345011 3.67706e-07 1.20401 3.67706e-07H10.796C10.9883 -0.000164459 11.1765 0.0550878 11.3381 0.159141C11.4998 0.263194 11.628 0.411637 11.7075 0.586693C11.7869 0.761749 11.8142 0.955998 11.7861 1.14618C11.758 1.33636 11.6757 1.51441 11.549 1.659L6.75301 7.139C6.65915 7.24641 6.5434 7.3325 6.41352 7.39148C6.28364 7.45046 6.14265 7.48098 6.00001 7.48098C5.85737 7.48098 5.71638 7.45046 5.5865 7.39148C5.45663 7.3325 5.34087 7.24641 5.24701 7.139V7.14Z"
-                                        fill="currentColor" />
+                        <label for="month">Month</label>
+                        <div x-data="select" class="relative h-6 leading-none w-36" @click.outside="open = false">
+                            <button type="button" @click="toggle"
+                                class="flex items-center justify-between font-medium px-3 rounded-md w-full h-full bg-white [#FFFFFF] border border-[#D9D9D9]">
+                                <span class="font-bold" x-text="(option == '') ? 'October' : option"></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                                    <path fill="currentColor"
+                                        d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
                                 </svg>
                             </button>
-                            {{-- dropdown --}}
-                            <template x-if="monthOption">
-                                <div class="absolute right-0 mb-10 z-50 mt-1 bg-white border-2 rounded-md w-[135px]">
-                                    <ul class="text-left ">
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">January</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">February</li>
-                                    </ul>
-                                </div>
+                            <template x-if="open">
+                                <ul
+                                    class="absolute font-medium w-full top-0 mt-7 rounded-md z-50 bg-[#FFFFFF] border border-[#E6E6E6] ">
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('January')"> January</li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('February')">
+                                        February
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('March')">
+                                        March
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('April')">
+                                        April
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('May')">
+                                        May
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('June')">
+                                        June
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('July')">
+                                        July
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('August')">
+                                        August
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('September')">
+                                        September
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('October')">
+                                        October
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('November')">
+                                        November
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('December')">
+                                        December
+                                    </li>
+                                </ul>
                             </template>
                         </div>
                     </div>
                 </div>
                 {{-- 2 --}}
                 <div class="flex items-center gap-x-3 ml-9">
-                    <h2>Department</h2>
-                    <div class="relative font-bold">
-                        <button @click="deptOption = !deptOption" @click.outside="deptOption = false"
-                            class="flex justify-between items-center border border-[#D9D9D9] rounded-md py-1 px-2 w-[135px] gap-x-1"
-                            type="button">
-                            <span class="">House Keeping</span>
-                            <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M5.24701 7.14L0.451011 1.658C-0.114989 1.013 0.345011 3.67706e-07 1.20401 3.67706e-07H10.796C10.9883 -0.000164459 11.1765 0.0550878 11.3381 0.159141C11.4998 0.263194 11.628 0.411637 11.7075 0.586693C11.7869 0.761749 11.8142 0.955998 11.7861 1.14618C11.758 1.33636 11.6757 1.51441 11.549 1.659L6.75301 7.139C6.65915 7.24641 6.5434 7.3325 6.41352 7.39148C6.28364 7.45046 6.14265 7.48098 6.00001 7.48098C5.85737 7.48098 5.71638 7.45046 5.5865 7.39148C5.45663 7.3325 5.34087 7.24641 5.24701 7.139V7.14Z"
-                                    fill="currentColor" />
+                    <label for="department">Department</label>
+                    <div x-data="select" class="relative h-6 leading-none w-36" @click.outside="open = false">
+                        <button type="button" @click="toggle"
+                            class="flex items-center justify-between font-medium px-3 rounded-md w-full h-full bg-white [#FFFFFF] border border-[#D9D9D9]">
+                            <span class="font-bold" x-text="(option == '') ? 'House Keeping' : option"></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                                <path fill="currentColor"
+                                    d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
                             </svg>
                         </button>
-                        {{-- dropdown --}}
-                        <template x-if="deptOption">
-                            <div class="absolute right-0 mb-10 z-50 mt-1 bg-white border-2 rounded-md w-[135px]">
-                                <ul class="text-left ">
-                                    <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Sales</li>
-                                    <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Marketing</li>
-                                </ul>
-                            </div>
+                        <template x-if="open">
+                            <ul
+                                class="absolute font-medium w-full top-0 mt-7 rounded-md z-50 bg-[#FFFFFF] border border-[#E6E6E6] ">
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                    @click="setOption('House Keeping')"> House Keeping</li>
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                    @click="setOption('Kitchen')"> Kitchen</li>
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                    @click="setOption('Electrician')">
+                                    Electrician
+                                </li>
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('Receptionist')">
+                                    Receptionist
+                                </li>
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('Purchasing')">
+                                    Purchasing
+                                </li>
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('Sales & Marketing')">
+                                    Sales & Marketing
+                                </li>
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('IT')">
+                                    IT
+                                </li>
+                            </ul>
                         </template>
                     </div>
                 </div>
                 {{-- 3 --}}
-                <div class="flex items-center gap-x-4 ml-16">
-                    <h2>Time In</h2>
+                <div class="flex items-center ml-14 gap-x-4">
+                    <h2 class="whitespace-nowrap">Time In</h2>
                     <div class="relative font-bold">
                         <div
                             class="flex justify-between items-center border border-[#CACACA] rounded-md py-1 pl-1 w-[82px] gap-x-1">
@@ -141,8 +195,8 @@
                     </div>
                 </div>
                 {{-- 4 --}}
-                <div class="flex items-center gap-x-4 ml-16">
-                    <h2>Time Out</h2>
+                <div class="flex items-center ml-16 gap-x-4">
+                    <h2 class="whitespace-nowrap">Time Out</h2>
                     <div class="relative font-bold">
                         <div
                             class="flex justify-between items-center border border-[#CACACA] rounded-md py-1 pl-1 w-[82px] gap-x-1">
@@ -155,9 +209,8 @@
             <livewire:components.main.manpower.schedules.schedules-section2 />
         </div>
     </div>
-
-
-
+@endsection
+@push('scripts')
     <script>
         const slides = document.querySelectorAll(".ani-slide");
         const nextSlide = document.querySelector(".btn-next");
@@ -182,5 +235,21 @@
                 });
             }
         });
+        // Option Select
+        document.addEventListener("alpine:init", () => {
+            Alpine.data("select", () => ({
+                open: false,
+                option: "",
+
+                toggle() {
+                    this.open = !this.open;
+                },
+
+                setOption(val) {
+                    this.option = val;
+                    this.open = false;
+                },
+            }));
+        });
     </script>
-@endsection
+@endpush

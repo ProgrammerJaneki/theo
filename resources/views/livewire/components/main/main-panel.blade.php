@@ -1,5 +1,5 @@
 {{-- Left Panel --}}
-<div x-data="{ manpowerSubRoutes: false, transactionSubRoutes: false, guestSubRoutes: false, inventorySubRoutes: false }" class="bg-[#4CAF50] flex flex-col gap-y-3 py-4 w-[320px] h-screen">
+<div x-data="{ manpowerSubRoutes: false, transactionSubRoutes: false, guestSubRoutes: false, inventorySubRoutes: false, settingSubRoutes: false }" class="bg-[#4CAF50] flex flex-col gap-y-3 py-4 w-[320px] h-screen">
     {{-- Upper --}}
     <div class="flex flex-col items-center px-5 text-xs gap-y-3 ">
         <button
@@ -59,7 +59,8 @@
             </li>
             {{-- Manpower --}}
             <li>
-                <button @click="manpowerSubRoutes = !manpowerSubRoutes "
+                <button
+                    @click="manpowerSubRoutes = !manpowerSubRoutes, transactionSubRoutes = false, guestSubRoutes = false, inventorySubRoutes = false, settingSubRoutes = false "
                     :class=" manpowerSubRoutes ?
                          '{{ Request::is('manpower*') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'bg-[#FFFFFF] text-[#4CAF50]' }}' :
                          '{{ Request::is('manpower*') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'hover:bg-[#FFFFFF] hover:text-[#4CAF50]' }}'"
@@ -127,7 +128,8 @@
             </li>
             {{-- Transactions --}}
             <li>
-                <button @click="transactionSubRoutes = !transactionSubRoutes "
+                <button
+                    @click="transactionSubRoutes = !transactionSubRoutes, manpowerSubRoutes = false, guestSubRoutes = false, inventorySubRoutes = false, settingSubRoutes = false "
                     :class=" transactionSubRoutes ?
                          '{{ Request::is('transactions*') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'bg-[#FFFFFF] text-[#4CAF50]' }}' :
                          '{{ Request::is('transactions*') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'hover:bg-[#FFFFFF] hover:text-[#4CAF50]' }}'"
@@ -188,7 +190,8 @@
             </li>
             {{-- Guests --}}
             <li>
-                <button @click="guestSubRoutes = !guestSubRoutes "
+                <button
+                    @click="guestSubRoutes = !guestSubRoutes, manpowerSubRoutes = false, transactionSubRoutes = false, inventorySubRoutes = false, settingSubRoutes = false "
                     :class=" guestSubRoutes ?
                          '{{ Request::is('guests*') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'bg-[#FFFFFF] text-[#4CAF50]' }}' :
                          '{{ Request::is('guests*') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'hover:bg-[#FFFFFF] hover:text-[#4CAF50]' }}'"
@@ -232,7 +235,8 @@
             </li>
             {{-- Inventory --}}
             <li>
-                <button @click="inventorySubRoutes = !inventorySubRoutes "
+                <button
+                    @click="inventorySubRoutes = !inventorySubRoutes, manpowerSubRoutes = false, guestSubRoutes = false, transactionSubRoutes = false, settingSubRoutes = false "
                     :class=" inventorySubRoutes ?
                          '{{ Request::is('inventory*') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'bg-[#FFFFFF] text-[#4CAF50]' }}' :
                          '{{ Request::is('inventory*') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'hover:bg-[#FFFFFF] hover:text-[#4CAF50]' }}'"
@@ -244,14 +248,13 @@
                     </svg>
                     <span>Inventory</span>
                 </button>
-                {{-- Transations sub routes --}}
+                {{-- Inventory sub routes --}}
                 <template x-if="inventorySubRoutes">
                     <ul>
                         {{-- Facilities --}}
                         <li
                             class="{{ Request::is('inventory/facilities/standard-bedroom*') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'bg-transparent hover:bg-[#FFFFFF] hover:text-[#4CAF50] text-[#FFFFFF]' }}">
-                            <a class="flex items-center py-2 pl-12 gap-x-3"
-                                href="{{ route('standard-bedroom') }}">
+                            <a class="flex items-center py-2 pl-12 gap-x-3" href="{{ route('standard-bedroom') }}">
                                 <svg class="w-6 h-6" viewBox="0 0 14 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -291,8 +294,54 @@
                     </ul>
                 </template>
             </li>
-
-            <li class=""><a class="flex items-center px-5 py-2 gap-x-3" href="">
+            {{-- Settings --}}
+            <li>
+                <button
+                    @click="settingSubRoutes = !settingSubRoutes, manpowerSubRoutes = false, guestSubRoutes = false, transactionSubRoutes = false, inventorySubRoutes = false "
+                    :class=" settingSubRoutes ?
+                         '{{ Request::is('settings*') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'bg-[#FFFFFF] text-[#4CAF50]' }}' :
+                         '{{ Request::is('settings*') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'hover:bg-[#FFFFFF] hover:text-[#4CAF50]' }}'"
+                    class="flex items-center w-full px-5 py-3 gap-x-3" type="button">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.82 22H10.18C9.95194 22 9.73071 21.9221 9.55301 21.7792C9.37531 21.6362 9.25181 21.4368 9.20301 21.214L8.79601 19.33C8.25306 19.0921 7.73824 18.7946 7.26101 18.443L5.42401 19.028C5.20657 19.0973 4.97196 19.0902 4.75913 19.0078C4.5463 18.9254 4.36806 18.7727 4.25401 18.575L2.43001 15.424C2.31715 15.2261 2.27479 14.9958 2.30985 14.7708C2.34491 14.5457 2.45532 14.3392 2.62301 14.185L4.04801 12.885C3.9832 12.2961 3.9832 11.7019 4.04801 11.113L2.62301 9.816C2.45508 9.66177 2.34452 9.45507 2.30946 9.22978C2.27439 9.00449 2.3169 8.77397 2.43001 8.576L4.25001 5.423C4.36406 5.22532 4.5423 5.07259 4.75513 4.99019C4.96796 4.90778 5.20257 4.90066 5.42001 4.97L7.25701 5.555C7.50101 5.375 7.75501 5.207 8.01701 5.055C8.27001 4.913 8.53001 4.784 8.79601 4.669L9.20401 2.787C9.25258 2.5642 9.37584 2.36469 9.55335 2.22155C9.73087 2.07841 9.95197 2.00024 10.18 2H13.82C14.048 2.00024 14.2691 2.07841 14.4467 2.22155C14.6242 2.36469 14.7474 2.5642 14.796 2.787L15.208 4.67C15.7503 4.90927 16.2649 5.20668 16.743 5.557L18.581 4.972C18.7983 4.90292 19.0327 4.91017 19.2453 4.99256C19.4579 5.07495 19.636 5.22753 19.75 5.425L21.57 8.578C21.802 8.985 21.722 9.5 21.377 9.817L19.952 11.117C20.0168 11.7059 20.0168 12.3001 19.952 12.889L21.377 14.189C21.722 14.507 21.802 15.021 21.57 15.428L19.75 18.581C19.636 18.7787 19.4577 18.9314 19.2449 19.0138C19.0321 19.0962 18.7974 19.1033 18.58 19.034L16.743 18.449C16.2661 18.8003 15.7516 19.0975 15.209 19.335L14.796 21.214C14.7472 21.4366 14.6239 21.6359 14.4464 21.7788C14.2689 21.9218 14.0479 21.9998 13.82 22V22ZM11.996 8C10.9351 8 9.91772 8.42143 9.16758 9.17157C8.41743 9.92172 7.99601 10.9391 7.99601 12C7.99601 13.0609 8.41743 14.0783 9.16758 14.8284C9.91772 15.5786 10.9351 16 11.996 16C13.0569 16 14.0743 15.5786 14.8244 14.8284C15.5746 14.0783 15.996 13.0609 15.996 12C15.996 10.9391 15.5746 9.92172 14.8244 9.17157C14.0743 8.42143 13.0569 8 11.996 8V8Z"
+                            fill="currentColor" />
+                    </svg>
+                    <span>Settings</span>
+                </button>
+                {{-- Settings sub routes --}}
+                <template x-if="settingSubRoutes">
+                    <ul>
+                        {{-- User --}}
+                        <li
+                            class="{{ Request::is('settings/user-section1*') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'bg-transparent hover:bg-[#FFFFFF] hover:text-[#4CAF50] text-[#FFFFFF]' }}">
+                            <a class="flex items-center py-2 pl-12 gap-x-3" href="{{ route('user-section1') }}">
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg"
+                                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 512">
+                                    <path fill="currentColor"
+                                        d="M610.5 373.3c2.6-14.1 2.6-28.5 0-42.6l25.8-14.9c3-1.7 4.3-5.2 3.3-8.5c-6.7-21.6-18.2-41.2-33.2-57.4c-2.3-2.5-6-3.1-9-1.4l-25.8 14.9c-10.9-9.3-23.4-16.5-36.9-21.3v-29.8c0-3.4-2.4-6.4-5.7-7.1c-22.3-5-45-4.8-66.2 0c-3.3.7-5.7 3.7-5.7 7.1v29.8c-13.5 4.8-26 12-36.9 21.3l-25.8-14.9c-2.9-1.7-6.7-1.1-9 1.4c-15 16.2-26.5 35.8-33.2 57.4c-1 3.3.4 6.8 3.3 8.5l25.8 14.9c-2.6 14.1-2.6 28.5 0 42.6l-25.8 14.9c-3 1.7-4.3 5.2-3.3 8.5c6.7 21.6 18.2 41.1 33.2 57.4c2.3 2.5 6 3.1 9 1.4l25.8-14.9c10.9 9.3 23.4 16.5 36.9 21.3v29.8c0 3.4 2.4 6.4 5.7 7.1c22.3 5 45 4.8 66.2 0c3.3-.7 5.7-3.7 5.7-7.1v-29.8c13.5-4.8 26-12 36.9-21.3l25.8 14.9c2.9 1.7 6.7 1.1 9-1.4c15-16.2 26.5-35.8 33.2-57.4c1-3.3-.4-6.8-3.3-8.5l-25.8-14.9zM496 400.5c-26.8 0-48.5-21.8-48.5-48.5s21.8-48.5 48.5-48.5s48.5 21.8 48.5 48.5s-21.7 48.5-48.5 48.5zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm201.2 226.5c-2.3-1.2-4.6-2.6-6.8-3.9l-7.9 4.6c-6 3.4-12.8 5.3-19.6 5.3c-10.9 0-21.4-4.6-28.9-12.6c-18.3-19.8-32.3-43.9-40.2-69.6c-5.5-17.7 1.9-36.4 17.9-45.7l7.9-4.6c-.1-2.6-.1-5.2 0-7.8l-7.9-4.6c-16-9.2-23.4-28-17.9-45.7c.9-2.9 2.2-5.8 3.2-8.7c-3.8-.3-7.5-1.2-11.4-1.2h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c10.1 0 19.5-3.2 27.2-8.5c-1.2-3.8-2-7.7-2-11.8v-9.2z" />
+                                </svg>
+                                <span>User</span>
+                            </a>
+                        </li>
+                        {{-- Help --}}
+                        <li
+                            class="{{ Request::is('settings/help-section1*') ? 'bg-[#FFFFFF] text-[#4CAF50]' : 'bg-transparent hover:bg-[#FFFFFF] hover:text-[#4CAF50] text-[#FFFFFF]' }}">
+                            <a class="flex items-center py-2 pl-12 gap-x-3" href="{{ route('help-section1') }}">
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" 
+                                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+                                    <path fill="currentColor"
+                                        d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2Zm0 23a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 16 25Zm1.142-7.754v2.501h-2.25V15h2.125a2.376 2.376 0 0 0 0-4.753h-1.5a2.378 2.378 0 0 0-2.375 2.375v.638h-2.25v-.638A4.628 4.628 0 0 1 15.517 8h1.5a4.624 4.624 0 0 1 .125 9.246Z" />
+                                    <path fill="none"
+                                        d="M16 25a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 16 25Zm1.142-7.754v2.501h-2.25V15h2.125a2.376 2.376 0 0 0 0-4.753h-1.5a2.378 2.378 0 0 0-2.375 2.375v.638h-2.25v-.638A4.628 4.628 0 0 1 15.517 8h1.5a4.624 4.624 0 0 1 .125 9.246Z" />
+                                </svg>
+                                <span>Help</span>
+                            </a>
+                        </li>
+                    </ul>
+                </template>
+            </li>
+            {{-- <li class=""><a class="flex items-center px-5 py-2 gap-x-3" href="">
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M13.82 22H10.18C9.95194 22 9.73071 21.9221 9.55301 21.7792C9.37531 21.6362 9.25181 21.4368 9.20301 21.214L8.79601 19.33C8.25306 19.0921 7.73824 18.7946 7.26101 18.443L5.42401 19.028C5.20657 19.0973 4.97196 19.0902 4.75913 19.0078C4.5463 18.9254 4.36806 18.7727 4.25401 18.575L2.43001 15.424C2.31715 15.2261 2.27479 14.9958 2.30985 14.7708C2.34491 14.5457 2.45532 14.3392 2.62301 14.185L4.04801 12.885C3.9832 12.2961 3.9832 11.7019 4.04801 11.113L2.62301 9.816C2.45508 9.66177 2.34452 9.45507 2.30946 9.22978C2.27439 9.00449 2.3169 8.77397 2.43001 8.576L4.25001 5.423C4.36406 5.22532 4.5423 5.07259 4.75513 4.99019C4.96796 4.90778 5.20257 4.90066 5.42001 4.97L7.25701 5.555C7.50101 5.375 7.75501 5.207 8.01701 5.055C8.27001 4.913 8.53001 4.784 8.79601 4.669L9.20401 2.787C9.25258 2.5642 9.37584 2.36469 9.55335 2.22155C9.73087 2.07841 9.95197 2.00024 10.18 2H13.82C14.048 2.00024 14.2691 2.07841 14.4467 2.22155C14.6242 2.36469 14.7474 2.5642 14.796 2.787L15.208 4.67C15.7503 4.90927 16.2649 5.20668 16.743 5.557L18.581 4.972C18.7983 4.90292 19.0327 4.91017 19.2453 4.99256C19.4579 5.07495 19.636 5.22753 19.75 5.425L21.57 8.578C21.802 8.985 21.722 9.5 21.377 9.817L19.952 11.117C20.0168 11.7059 20.0168 12.3001 19.952 12.889L21.377 14.189C21.722 14.507 21.802 15.021 21.57 15.428L19.75 18.581C19.636 18.7787 19.4577 18.9314 19.2449 19.0138C19.0321 19.0962 18.7974 19.1033 18.58 19.034L16.743 18.449C16.2661 18.8003 15.7516 19.0975 15.209 19.335L14.796 21.214C14.7472 21.4366 14.6239 21.6359 14.4464 21.7788C14.2689 21.9218 14.0479 21.9998 13.82 22V22ZM11.996 8C10.9351 8 9.91772 8.42143 9.16758 9.17157C8.41743 9.92172 7.99601 10.9391 7.99601 12C7.99601 13.0609 8.41743 14.0783 9.16758 14.8284C9.91772 15.5786 10.9351 16 11.996 16C13.0569 16 14.0743 15.5786 14.8244 14.8284C15.5746 14.0783 15.996 13.0609 15.996 12C15.996 10.9391 15.5746 9.92172 14.8244 9.17157C14.0743 8.42143 13.0569 8 11.996 8V8Z"
@@ -300,12 +349,7 @@
                     </svg>
                     <span>Settings</span>
                 </a>
-                {{-- <ul>
-                    <li class="bg-purple-200 hover:bg-white"><a class="px-5" href="">Employee List</a></li>
-                    <li>SChedules</li>
-                    <li>Jobs</li>
-                </ul> --}}
-            </li>
+            </li> --}}
         </ul>
     </nav>
 </div>

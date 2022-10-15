@@ -27,7 +27,7 @@
                         {{-- Modal --}}
                         <template x-if="saveJob">
                             <div
-                                class="fixed inset-0 top-0 left-0 right-0 z-50 flex items-center justify-center w-full overflow-x-hidden overflow-y-hidden  bg-smoke-lighter">
+                                class="fixed inset-0 top-0 left-0 right-0 z-50 flex items-center justify-center w-full overflow-x-hidden overflow-y-hidden bg-smoke-lighter">
                                 {{-- Saved --}}
                                 <div
                                     class="animate__animated animate__bounceInUp flex text-center flex-col items-center justify-center leading-none bg-white rounded-xl w-[550px] h-[377px]">
@@ -48,38 +48,51 @@
                 {{-- Middle --}}
                 <div class="flex gap-x-36 mt-5 w-full h-[737px]">
                     {{-- Left --}}
-                    <div class="flex flex-col text-xs gap-y-5 h-full ">
+                    <div class="flex flex-col h-full text-xs gap-y-5 ">
                         {{-- Department --}}
-                        <div x-data="{ selectDepartment: false, selectPosition: false }" class="flex items-center justify-between w-[516px]">
+                        <div  class="flex items-center justify-between w-[516px]">
                             <label class="" for="department">Department:</label>
-                            {{-- <h2 class="text-[#000000]">Department:</h2> --}}
                             <div class="flex items-center gap-x-4">
-                                <div class="relative font-bold">
-                                    <button @click="selectDepartment = !selectDepartment"
-                                        @click.outside="selectDepartment = false"
-                                        class="flex justify-between items-center border border-[#D9D9D9] rounded-md py-2 px-2 w-[248px] gap-x-1"
-                                        type="button">
-                                        <span class="">House Keeping</span>
-                                        <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M5.24701 7.14L0.451011 1.658C-0.114989 1.013 0.345011 3.67706e-07 1.20401 3.67706e-07H10.796C10.9883 -0.000164459 11.1765 0.0550878 11.3381 0.159141C11.4998 0.263194 11.628 0.411637 11.7075 0.586693C11.7869 0.761749 11.8142 0.955998 11.7861 1.14618C11.758 1.33636 11.6757 1.51441 11.549 1.659L6.75301 7.139C6.65915 7.24641 6.5434 7.3325 6.41352 7.39148C6.28364 7.45046 6.14265 7.48098 6.00001 7.48098C5.85737 7.48098 5.71638 7.45046 5.5865 7.39148C5.45663 7.3325 5.34087 7.24641 5.24701 7.139V7.14Z"
-                                                fill="currentColor" />
+                                <div x-data="select" class="relative leading-none w-[15.5rem] h-9"
+                                    @click.outside="open = false">
+                                    <button type="button" @click="toggle"
+                                        class="flex items-center justify-between font-medium px-3 rounded-md w-full h-full bg-white [#FFFFFF] border border-[#D9D9D9]">
+                                        <span class="font-bold" x-text="(option == '') ? 'House Keeping' : option"></span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                                            <path fill="currentColor"
+                                                d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
                                         </svg>
                                     </button>
-                                    {{-- dropdown --}}
-                                    <template x-if="selectDepartment">
-                                        <div
-                                            class="absolute right-0 mb-10 z-50 mt-1 bg-white border-2 rounded-md w-[248px]">
-                                            <ul class="text-left ">
-                                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Kitchen</li>
-                                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Electrician</li>
-                                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Receptionist</li>
-                                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Purchasing</li>
-                                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Sales & Marketing</li>
-                                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">IT</li>
-                                            </ul>
-                                        </div>
+                                    <template x-if="open">
+                                        <ul
+                                            class="absolute font-medium w-full top-0 mt-10 rounded-md z-50 bg-[#FFFFFF] border border-[#E6E6E6] ">
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('House Keeping')"> House Keeping</li>
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Kitchen')">
+                                                Kitchen</li>
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Maintenance')">
+                                                Maintenance
+                                            </li>
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Front Office')">
+                                                Front Office
+                                            </li>
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Purchasing')">
+                                                Purchasing
+                                            </li>
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Sales & Marketing')">
+                                                Sales & Marketing
+                                            </li>
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('IT')">
+                                                IT
+                                            </li>
+                                        </ul>
                                     </template>
                                 </div>
                                 {{-- Create New  --}}
@@ -91,36 +104,49 @@
                             </div>
                         </div>
                         {{-- Position --}}
-                        <div x-data="{ selectPosition: false }" class="flex items-center justify-between w-[516px] ">
+                        <div class="flex items-center justify-between w-[516px] ">
                             <label for="position">Position:</label>
                             <div class="flex items-center gap-x-4">
-                                <div class="relative font-bold ml ">
-                                    <button @click="selectPosition = !selectPosition"
-                                        @click.outside="selectPosition = false"
-                                        class="flex justify-between items-center border border-[#D9D9D9] rounded-md py-2 px-2 w-[248px] gap-x-1"
-                                        type="button">
-                                        <span class="">Room Attendant</span>
-                                        <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M5.24701 7.14L0.451011 1.658C-0.114989 1.013 0.345011 3.67706e-07 1.20401 3.67706e-07H10.796C10.9883 -0.000164459 11.1765 0.0550878 11.3381 0.159141C11.4998 0.263194 11.628 0.411637 11.7075 0.586693C11.7869 0.761749 11.8142 0.955998 11.7861 1.14618C11.758 1.33636 11.6757 1.51441 11.549 1.659L6.75301 7.139C6.65915 7.24641 6.5434 7.3325 6.41352 7.39148C6.28364 7.45046 6.14265 7.48098 6.00001 7.48098C5.85737 7.48098 5.71638 7.45046 5.5865 7.39148C5.45663 7.3325 5.34087 7.24641 5.24701 7.139V7.14Z"
-                                                fill="currentColor" />
+                                <div x-data="select" class="relative leading-none w-[15.5rem] h-9"
+                                    @click.outside="open = false">
+                                    <button type="button" @click="toggle"
+                                        class="flex items-center justify-between font-medium px-3 rounded-md w-full h-full bg-white [#FFFFFF] border border-[#D9D9D9]">
+                                        <span class="font-bold" x-text="(option == '') ? 'Room Attendant' : option"></span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                                            <path fill="currentColor"
+                                                d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
                                         </svg>
                                     </button>
-                                    {{-- dropdown --}}
-                                    <template x-if="selectPosition">
-                                        <div
-                                            class="absolute right-0 mb-10 z-50 mt-1 bg-white border-2 rounded-md w-[248px]">
-                                            <ul class="text-left ">
-                                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Line Cook</li>
-                                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Electrician</li>
-                                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Receptionist</li>
-                                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Purchasing Associate</li>
-                                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Director of Sales &
-                                                    Marketing</li>
-                                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Network Administrator</li>
-                                            </ul>
-                                        </div>
+                                    <template x-if="open">
+                                        <ul
+                                            class="absolute font-medium w-full top-0 mt-10 rounded-md z-50 bg-[#FFFFFF] border border-[#E6E6E6] ">
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Room Attendant')"> Room Attendant</li>
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Line Cook')">
+                                                Line Cook</li>
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Electrician')">
+                                                Electrician
+                                            </li>
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Receptionist')">
+                                                Receptionist
+                                            </li>
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Purchasing Associate')">
+                                                Purchasing Associate
+                                            </li>
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Director of Sales & Marketing')">
+                                                Director of Sales & Marketing
+                                            </li>
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Network Administrator')">
+                                                Network Administrator
+                                            </li>
+                                        </ul>
                                     </template>
                                 </div>
                                 {{-- Create New  --}}
@@ -132,7 +158,7 @@
                             </div>
                         </div>
                         {{-- Text --}}
-                        <div class="flex flex-col gap-y-10 mt-auto">
+                        <div class="flex flex-col mt-auto gap-y-10">
                             {{-- 1 --}}
                             <div class="space-y-2">
                                 <label class="font-bold " for="jobDescription">Job Description</label>
@@ -153,7 +179,7 @@
                     <div class="flex flex-col border-2 border-[#AAAAAA] text-xs py-8 px-9 rounded-xl w-[356px] h-full">
                         {{-- 1 --}}
                         <div class="flex flex-col gap-y-10">
-                            <h2 class="font-bold text-base">Job Details</h2>
+                            <h2 class="text-base font-bold">Job Details</h2>
                             <div class="space-y-2">
                                 <h2>Publish Date</h2>
                                 <h2 class="font-bold">Unpublished</h2>
@@ -196,66 +222,83 @@
                             <div>
                                 <label for="numHires">Number of Hires for this role</label>
                                 <div class="flex items-center gap-x-2">
-                                    <button class="font-bold leading-none px-2 text-xl" type="button">-</button>
+                                    <button class="px-2 text-xl font-bold leading-none" type="button">-</button>
                                     <h2 class="font-bold">1</h2>
-                                    <button class="font-bold leading-none px-2 text-xl" type="button">+</button>
+                                    <button class="px-2 text-xl font-bold leading-none" type="button">+</button>
                                 </div>
                             </div>
                             {{-- C --}}
                             <div x-data="{ selectEmployment: false }" class="space-y-1">
                                 <label for="employmentType">Employment Type</label>
-                                <div class="flex items-center gap-x-4">
-                                    <div class="relative font-bold ml ">
-                                        <button @click="selectEmployment = !selectEmployment"
-                                            @click.outside="selectEmployment = false"
-                                            class="flex justify-between items-center border border-[#D9D9D9] rounded-md py-2 px-2 w-[206px] gap-x-1"
-                                            type="button">
-                                            <span class="">Full Time</span>
-                                            <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M5.24701 7.14L0.451011 1.658C-0.114989 1.013 0.345011 3.67706e-07 1.20401 3.67706e-07H10.796C10.9883 -0.000164459 11.1765 0.0550878 11.3381 0.159141C11.4998 0.263194 11.628 0.411637 11.7075 0.586693C11.7869 0.761749 11.8142 0.955998 11.7861 1.14618C11.758 1.33636 11.6757 1.51441 11.549 1.659L6.75301 7.139C6.65915 7.24641 6.5434 7.3325 6.41352 7.39148C6.28364 7.45046 6.14265 7.48098 6.00001 7.48098C5.85737 7.48098 5.71638 7.45046 5.5865 7.39148C5.45663 7.3325 5.34087 7.24641 5.24701 7.139V7.14Z"
-                                                    fill="currentColor" />
-                                            </svg>
-                                        </button>
-                                        {{-- dropdown --}}
-                                        <template x-if="selectEmployment">
-                                            <div
-                                                class="absolute right-0 mb-10 z-50 mt-1 bg-white border-2 rounded-md w-[206px]">
-                                                <ul class="text-left ">
-                                                    <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Project Base</li>
-                                                    <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Part Time</li>
-                                                </ul>
-                                            </div>
-                                        </template>
-                                    </div>
+                                 <div x-data="select" class="relative leading-none w-52 h-9"
+                                    @click.outside="open = false">
+                                    <button type="button" @click="toggle"
+                                        class="flex items-center justify-between font-medium px-3 rounded-md w-full h-full bg-white [#FFFFFF] border border-[#D9D9D9]">
+                                        <span class="font-bold" x-text="(option == '') ? 'Full Time' : option"></span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                                            <path fill="currentColor"
+                                                d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                                        </svg>
+                                    </button>
+                                    <template x-if="open">
+                                        <ul
+                                            class="absolute font-medium w-full top-0 mt-10 rounded-md z-50 bg-[#FFFFFF] border border-[#E6E6E6] ">
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Full Time')"> Full Time</li>
+                                            <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                                @click="setOption('Part Time')">
+                                                Part Time</li>
+                                        </ul>
+                                    </template>
                                 </div>
                             </div>
                         </div>
                         {{-- 1 --}}
-                        <div class="mt-14 space-y-5">
+                        <div class="space-y-5 mt-14">
                             <label for="range">Salary Range</label>
                             <div class="space-y-3">
-                            <div class="flex items-center gap-x-5">
-                                <label class="w-7 for="minRange">Min:</label>
-                                <div
-                                    class="bg-[#EFEFEF] rounded-md space-x-3 border border-[#CACACA] py-1 px-3 flex w-[143px]">
-                                    <span class="font-bold">P</span>
-                                    <input class="bg-transparent focus:outline-none" type="text" placeholder="0">
+                                <div class="flex items-center gap-x-5">
+                                    <label class="w-7 for="minRange">Min:</label>
+                                    <div
+                                        class="bg-[#EFEFEF] rounded-md space-x-3 border border-[#CACACA] py-1 px-3 flex w-[143px]">
+                                        <span class="font-bold">P</span>
+                                        <input class="bg-transparent focus:outline-none" type="text" placeholder="0">
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-x-5">
+                                    <label class="w-7" for="maxRange">Max:</label>
+                                    <div
+                                        class="bg-[#EFEFEF] rounded-md space-x-3 border border-[#CACACA] py-1 px-3 flex w-[143px]">
+                                        <span class="font-bold">P</span>
+                                        <input class="bg-transparent focus:outline-none" type="text" placeholder="0">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-x-5">
-                                <label class="w-7" for="maxRange">Max:</label>
-                                <div
-                                    class="bg-[#EFEFEF] rounded-md space-x-3 border border-[#CACACA] py-1 px-3 flex w-[143px]">
-                                    <span class="font-bold">P</span>
-                                    <input class="bg-transparent focus:outline-none" type="text" placeholder="0">
-                                </div>
-                            </div>
-                                                        </div>
                         </div>
                     </div>
             </form>
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        // Option Select
+        document.addEventListener("alpine:init", () => {
+            Alpine.data("select", () => ({
+                open: false,
+                option: "",
+
+                toggle() {
+                    this.open = !this.open;
+                },
+
+                setOption(val) {
+                    this.option = val;
+                    this.open = false;
+                },
+            }));
+        });
+    </script>
+@endpush

@@ -1,7 +1,7 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
     <div class="px-5 py-3 ml-[320px]">
-        <div class="bg-white rounded-md px-9 pb-9">
+        <div class="min-h-screen bg-white rounded-md px-9 pb-9">
             {{-- Top --}}
             <div class="flex items-center justify-between w-full py-4 ">
                 <a class="flex items-center gap-x-2" href="{{ route('employe-list-section1') }}">
@@ -46,7 +46,7 @@
                 {{-- Profile --}}
                 <div class="flex py-8 border-y-2 border-[#CACACA]">
                     <div class="flex items-center w-full gap-x-10">
-                        <img src="{{ asset('images/main/manpower/user-profile.png') }}" alt="user">
+                        <img class="w-48 h-full" src="{{ asset('images/main/manpower/user-profile.png') }}" alt="user">
                         {{-- Top --}}
                         <div class="flex flex-col w-full text-xs gap-y-2">
                             <div class="flex items-center justify-between">
@@ -82,21 +82,21 @@
                                     </template>
                                 </div>
                             </div>
-                            <div class="flex ">
+                            <div class="flex gap-x-2">
                                 {{-- Fname --}}
-                                <div class="flex flex-col">
-                                    <input class="border-b-2 pr-2 border-[#A7A7A7] focus:outline-none" type="text">
-                                    <span>First Name</span>
+                                <div class="flex flex-col w-40 gap-y-1">
+                                    <input class=" p-2 focus:outline-none rounded-md bg-[#E6E6E6]" type="text">
+                                    <h2 class="text-base font-bold">First Name</h2>
                                 </div>
                                 {{-- MI --}}
-                                <div class="flex flex-col">
-                                    <input class="border-b-2 pr-2 border-[#A7A7A7] focus:outline-none" type="text">
-                                    <span>M.I</span>
+                                <div class="flex flex-col w-40 gap-y-1">
+                                    <input class=" p-2 focus:outline-none rounded-md bg-[#E6E6E6]" type="text">
+                                    <h2 class="text-base font-bold">M.I</h2>
                                 </div>
                                 {{-- Lname --}}
-                                <div class="flex flex-col">
-                                    <input class="border-b-2 border-[#A7A7A7] focus:outline-none" type="text">
-                                    <span>Last Names</span>
+                                <div class="flex flex-col w-40 gap-y-1">
+                                    <input class=" p-2 focus:outline-none rounded-md bg-[#E6E6E6]" type="text">
+                                    <h2 class="text-base font-bold">Last Name</h2>
                                 </div>
                             </div>
                             <div class="flex flex-col gap-y-3">

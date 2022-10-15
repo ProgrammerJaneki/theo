@@ -32,44 +32,44 @@
                             <ul class="flex flex-col gap-y-4">
                                 <li
                                     class="{{ Request::is('inventory/facilities/standard-bedroom*')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Standard Bedroom</a>
                                 </li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Deluxe Bedroom</a>
                                 </li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Joint Bedroom</a>
                                 </li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Connecting Bedroom</a>
                                 </li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Suite</a>
                                 </li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Apartment Style</a>
                                 </li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Accessible Bedroom</a>
                                 </li>
                             </ul>
@@ -79,49 +79,49 @@
                             <h2 class="font-bold">Others</h2>
                             <ul class="flex flex-col gap-y-4">
                                 <li
-                                    class="{{ Request::is('inventory/facilities/standard-bedroom*')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                    class="{{ Request::is('inventory/facilities')
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Spa & Relaxatin</a></li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Fitness Gym</a></li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Swimming Pool</a></li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Bar</a></li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Bar</a></li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Theatre Room</a></li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Conference Hall</a></li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Parking Area</a></li>
                                 <li
                                     class="{{ Request::is('inventory/facilities')
-                                        ? 'text-[#4CAF50] font-medium transition-all duration-150 ease-linear'
-                                        : 'hover:text-[#4CAF50] font-medium transition-all duration-150 ease-linear' }}">
+                                        ? 'text-[#4CAF50] font-semibold transition-all duration-150 ease-linear'
+                                        : 'hover:text-[#4CAF50] hover:font-semibold transition-all duration-150 ease-linear' }}">
                                     <a href="">Lounge</a></li>
                             </ul>
                         </div>

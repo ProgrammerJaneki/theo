@@ -3,7 +3,7 @@
     <div class="px-5 py-3 ml-[320px]">
         <div class="text-xs bg-white rounded-md px-7 pb-9">
             {{-- Top --}}
-            <div class="flex items-center justify-between w-full pt-5 pb-0 ">
+            <div class="flex justify-between w-full pt-5 pb-0 ">
                 <h1 class="text-base font-bold">Monday, 23 August, 2022</h1>
                 <a class="bg-[#4CAF50] text-[#FFFFFF] flex items-center py-3 px-6 gap-x-2 rounded-md hover:bg-[#4CAF50]/80 transition-all duration-150 ease-linear"
                     href="{{ route('add-job') }}">
@@ -111,7 +111,7 @@
                 </div>
             </div>
             {{-- Search bar + --}}
-            <div x-data="{ pickOrder: false, pickMonth: false, pickYear: false }" class="flex items-center justify-between w-full pb-2 mt-4 ">
+            <div class="flex items-center justify-between w-full pb-2 mt-4 ">
                 {{-- Search Bar --}}
                 <div class="bg-[#E6E6E6] text-[#A7A7A7] flex items-center py-3 px-5 gap-x-4 rounded-xl w-[380px]">
                     <input class="w-full bg-transparent focus:text-[#333443] focus:outline-none" type="text"
@@ -126,92 +126,134 @@
                 <div class="flex items-center gap-x-8">
                     {{-- Order --}}
                     <div class="flex items-center gap-x-2 ">
-                        <h2>Order:</h2>
-                        <div class="relative font-bold">
-                            <button @click="pickOrder = !pickOrder" @click.outside="pickOrder = false"
-                                class="flex justify-between items-center border border-[#D9D9D9] rounded-md py-1 px-2 whitespace-nowrap w-[147px]"
-                                type="button">
-                                <span class="">Newest - Oldest</span>
-                                <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M5.24701 7.14L0.451011 1.658C-0.114989 1.013 0.345011 3.67706e-07 1.20401 3.67706e-07H10.796C10.9883 -0.000164459 11.1765 0.0550878 11.3381 0.159141C11.4998 0.263194 11.628 0.411637 11.7075 0.586693C11.7869 0.761749 11.8142 0.955998 11.7861 1.14618C11.758 1.33636 11.6757 1.51441 11.549 1.659L6.75301 7.139C6.65915 7.24641 6.5434 7.3325 6.41352 7.39148C6.28364 7.45046 6.14265 7.48098 6.00001 7.48098C5.85737 7.48098 5.71638 7.45046 5.5865 7.39148C5.45663 7.3325 5.34087 7.24641 5.24701 7.139V7.14Z"
-                                        fill="currentColor" />
+                        <label for="order">Order:</label>
+                        <div x-data="select" class="relative h-6 leading-none w-36"
+                            @click.outside="open = false">
+                            <button type="button" @click="toggle"
+                                class="flex items-center justify-between font-medium px-3 rounded-md w-full h-full bg-white [#FFFFFF] border border-[#D9D9D9]">
+                                <span class="font-bold" x-text="(option == '') ? 'Newest - Oldest' : option"></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                                    <path fill="currentColor"
+                                        d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
                                 </svg>
                             </button>
-                            {{-- dropdown --}}
-                            <template x-if="pickOrder">
-                                <div class="absolute right-0 mb-10 z-50 mt-1 bg-white border-2 rounded-md w-[147px]">
-                                    <ul class="text-left ">
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Oldest - Newest</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Option</li>
-                                    </ul>
-                                </div>
+                            <template x-if="open">
+                                <ul
+                                    class="absolute font-medium w-full top-0 mt-7 rounded-md z-50 bg-[#FFFFFF] border border-[#E6E6E6] ">
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('Newest - Oldest')">
+                                        Newest - Oldest
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('Oldest - Newest')">
+                                        Oldest - Newest
+                                    </li>
+                                </ul>
                             </template>
                         </div>
                     </div>
                     {{-- Month --}}
-                    <div class="flex items-center gap-x-2">
-                        <h2>Month:</h2>
-                        <div class="relative font-bold">
-                            <button @click="pickMonth = !pickMonth" @click.outside="pickMonth = false"
-                                class="flex justify-between items-center border border-[#D9D9D9] rounded-md py-1 px-2 whitespace-nowrap w-[147px]"
-                                type="button">
-                                <span class="">August</span>
-                                <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M5.24701 7.14L0.451011 1.658C-0.114989 1.013 0.345011 3.67706e-07 1.20401 3.67706e-07H10.796C10.9883 -0.000164459 11.1765 0.0550878 11.3381 0.159141C11.4998 0.263194 11.628 0.411637 11.7075 0.586693C11.7869 0.761749 11.8142 0.955998 11.7861 1.14618C11.758 1.33636 11.6757 1.51441 11.549 1.659L6.75301 7.139C6.65915 7.24641 6.5434 7.3325 6.41352 7.39148C6.28364 7.45046 6.14265 7.48098 6.00001 7.48098C5.85737 7.48098 5.71638 7.45046 5.5865 7.39148C5.45663 7.3325 5.34087 7.24641 5.24701 7.139V7.14Z"
-                                        fill="currentColor" />
+                    <div class="flex items-center gap-x-4">
+                        <label for="month">Month:</label>
+                        <div x-data="select" class="relative h-6 leading-none w-36"
+                            @click.outside="open = false">
+                            <button type="button" @click="toggle"
+                                class="flex items-center justify-between font-medium px-3 rounded-md w-full h-full bg-white [#FFFFFF] border border-[#D9D9D9]">
+                                <span class="font-bold" x-text="(option == '') ? 'October' : option"></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                                    <path fill="currentColor"
+                                        d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
                                 </svg>
                             </button>
-                            {{-- dropdown --}}
-                            <template x-if="pickMonth">
-                                <div class="absolute right-0 mb-10 z-50 mt-1 bg-white border-2 rounded-md w-[147px]">
-                                    <ul class="text-left ">
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">January</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">February</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">March</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">April</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">June</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">July</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">September</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">October</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">November</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">December</li>
-                                    </ul>
-                                </div>
+                            <template x-if="open">
+                                <ul
+                                    class="absolute font-medium w-full top-0 mt-7 rounded-md z-50 bg-[#FFFFFF] border border-[#E6E6E6] ">
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('January')"> January</li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('February')">
+                                        February
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('March')">
+                                        March
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('April')">
+                                        April
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('May')">
+                                        May
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('June')">
+                                        June
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('July')">
+                                        July
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('August')">
+                                        August
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('September')">
+                                        September
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('October')">
+                                        October
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('November')">
+                                        November
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('December')">
+                                        December
+                                    </li>
+                                </ul>
                             </template>
                         </div>
                     </div>
                     {{-- Year --}}
                     <div class="flex items-center gap-x-2 ">
-                        <h2>Year:</h2>
-                        <div class="relative font-bold">
-                            <button @click="pickYear = !pickYear" @click.outside="pickYear = false"
-                                class="flex justify-between items-center border border-[#D9D9D9] rounded-md py-1 px-2 whitespace-nowrap w-[95px]"
-                                type="button">
-                                <span class="">2022</span>
-                                <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M5.24701 7.14L0.451011 1.658C-0.114989 1.013 0.345011 3.67706e-07 1.20401 3.67706e-07H10.796C10.9883 -0.000164459 11.1765 0.0550878 11.3381 0.159141C11.4998 0.263194 11.628 0.411637 11.7075 0.586693C11.7869 0.761749 11.8142 0.955998 11.7861 1.14618C11.758 1.33636 11.6757 1.51441 11.549 1.659L6.75301 7.139C6.65915 7.24641 6.5434 7.3325 6.41352 7.39148C6.28364 7.45046 6.14265 7.48098 6.00001 7.48098C5.85737 7.48098 5.71638 7.45046 5.5865 7.39148C5.45663 7.3325 5.34087 7.24641 5.24701 7.139V7.14Z"
-                                        fill="currentColor" />
+                        <label for="year">Year:</label>
+                        <div x-data="select" class="relative w-24 h-6 leading-none"
+                            @click.outside="open = false">
+                            <button type="button" @click="toggle"
+                                class="flex items-center justify-between font-medium px-3 rounded-md w-full h-full bg-white [#FFFFFF] border border-[#D9D9D9]">
+                                <span class="font-bold" x-text="(option == '') ? '2022' : option"></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                                    <path fill="currentColor"
+                                        d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
                                 </svg>
                             </button>
-                            {{-- dropdown --}}
-                            <template x-if="pickYear">
-                                <div class="absolute right-0 mb-10 z-50 mt-1 bg-white border-2 rounded-md w-[95px]">
-                                    <ul class="text-left ">
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">2018</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">2019</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">2020</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">2021</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">2022</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">2023</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">2024</li>
-                                    </ul>
-                                </div>
+                            <template x-if="open">
+                                <ul
+                                    class="absolute font-medium w-full top-0 mt-7 rounded-md z-50 bg-[#FFFFFF] border border-[#E6E6E6] ">
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('2021')">
+                                        2021
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('2022')">
+                                        2022
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('2023')">
+                                        2023
+                                    </li>
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        @click="setOption('2024')">
+                                        2024
+                                    </li>
+                                </ul>
                             </template>
                         </div>
                     </div>
@@ -275,3 +317,24 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        // Option Select
+        document.addEventListener("alpine:init", () => {
+            Alpine.data("select", () => ({
+                open: false,
+                option: "",
+
+                toggle() {
+                    this.open = !this.open;
+                },
+
+                setOption(val) {
+                    this.option = val;
+                    this.open = false;
+                },
+            }));
+        });
+    </script>
+@endpush

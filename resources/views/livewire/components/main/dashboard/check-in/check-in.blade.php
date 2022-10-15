@@ -43,28 +43,29 @@
                     {{-- Upper --}}
                     <div class="flex items-center text-xs font-bold mt-11 gap-x-4">
                         <h2 class="">Room Type:</h2>
-                        <div class="relative ">
-                            <button @click="roomType = !roomType" @click.outside="roomType = false"
-                                class="flex justify-between items-center border-2 border-[#CACACA] rounded-md p-1 w-[135px] gap-x-1"
-                                type="button">
-                                <span class="">Standard</span>
-                                <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M5.24701 7.14L0.451011 1.658C-0.114989 1.013 0.345011 3.67706e-07 1.20401 3.67706e-07H10.796C10.9883 -0.000164459 11.1765 0.0550878 11.3381 0.159141C11.4998 0.263194 11.628 0.411637 11.7075 0.586693C11.7869 0.761749 11.8142 0.955998 11.7861 1.14618C11.758 1.33636 11.6757 1.51441 11.549 1.659L6.75301 7.139C6.65915 7.24641 6.5434 7.3325 6.41352 7.39148C6.28364 7.45046 6.14265 7.48098 6.00001 7.48098C5.85737 7.48098 5.71638 7.45046 5.5865 7.39148C5.45663 7.3325 5.34087 7.24641 5.24701 7.139V7.14Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </button>
-                            {{-- dropdown --}}
-                            <template x-if="roomType">
-                                <div class="absolute mt-1 right-0 z-50 bg-white border-2 rounded-md w-[135px]">
-                                    <ul class="text-left ">
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Option</li>
-                                        <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Option</li>
-                                    </ul>
-                                </div>
-                            </template>
-                        </div>
+                      <div x-data="select" class="relative h-6 leading-none w-36" @click.outside="open = false">
+                        <button type="button" @click="toggle"
+                            class="flex items-center justify-between font-medium px-3 rounded-md w-full h-full bg-white [#FFFFFF] border border-[#D9D9D9]">
+                            <span class="font-bold" x-text="(option == '') ? 'Standard' : option"></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                                <path fill="currentColor"
+                                    d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg>
+                        </button>
+                        <template x-if="open">
+                            <ul
+                                class="absolute font-medium w-full top-0 mt-7 rounded-md z-50 bg-[#FFFFFF] border border-[#E6E6E6] ">
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('VIP')">
+                                    VIP
+                                </li>
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                    @click="setOption('Option')">
+                                    Option
+                                </li>
+                            </ul>
+                        </template>
+                    </div>
                     </div>
                     <div class="flex items-center mt-8 gap-x-6">
                         <img class="w-[209px] h-[154px]" src="{{ asset('images/main/dashboard/bed.png') }}" alt="bed">
@@ -226,7 +227,7 @@
                     <livewire:components.main.dashboard.check-in.check-in-calendar />
                 </div>
                 {{-- Right | Change to 708px later --}}
-                <div class="border-2 border-[#AAAAAA] flex flex-col p-6 rounded-xl w-[339px] h-[745px]">
+                <div class="border border-[#AAAAAA] flex flex-col p-6 rounded-xl w-[339px] h-[745px]">
                     <h1 class="font-bold">Reservation Summary</h1>
                     {{-- Reservation Info --}}
                     <div class="flex flex-col mt-5 text-xs">
@@ -299,3 +300,24 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        // Option Select
+        document.addEventListener("alpine:init", () => {
+            Alpine.data("select", () => ({
+                open: false,
+                option: "",
+
+                toggle() {
+                    this.open = !this.open;
+                },
+
+                setOption(val) {
+                    this.option = val;
+                    this.open = false;
+                },
+            }));
+        });
+    </script>
+@endpush

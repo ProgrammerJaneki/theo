@@ -1,6 +1,6 @@
 <div class="flex items-center mt-14 gap-x-4">
     {{-- Left --}}
-    <div class="border-2 border-[#AAAAAA] py-3 px-2 rounded-xl w-[414px] h-[309px]">
+    <div class="border border-[#AAAAAA] py-3 px-2 rounded-xl w-[414px] h-[309px]">
         {{-- Header --}}
         <div class="flex items-center justify-between transition-all duration-300 ease-linear ">
             {{-- 1 --}}
@@ -122,7 +122,7 @@
     {{-- Right --}}
     <div class="flex flex-col gap-y-5">
         {{-- Top --}}
-        <div class="border-2 border-[#AAAAAA] rounded-xl space-y-3 py-2 px-5 w-[226px] h-[153px]">
+        <div class="border border-[#AAAAAA] rounded-xl space-y-3 py-2 px-5 w-[226px] h-[153px]">
             <div class="flex items-center justify-between">
                 <h2 class="text-xs font-bold">Adults</h2>
                 <div class="flex items-center text-xs">
@@ -158,37 +158,60 @@
         </div>
         {{-- Bottom --}}
         <div x-data="{ codeType: false }"
-            class="text-xs border-2 border-[#AAAAAA] rounded-xl space-y-1 py-4 px-5 w-[226px]">
+            class="text-xs border border-[#AAAAAA] rounded-xl space-y-1 py-4 px-5 w-[226px]">
             <div>
                 <h2 class="text-[#A7A7A7]">Code Type</h2>
-                <div class="relative font-bold">
-                    <button @click="codeType = !codeType" @click.outside="codeType = false"
-                        class="flex justify-between items-center border-2 border-[#CACACA] rounded-md p-2 w-[179px] gap-x-1"
-                        type="button">
-                        <span class="">Company</span>
-                        <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M5.24701 7.14L0.451011 1.658C-0.114989 1.013 0.345011 3.67706e-07 1.20401 3.67706e-07H10.796C10.9883 -0.000164459 11.1765 0.0550878 11.3381 0.159141C11.4998 0.263194 11.628 0.411637 11.7075 0.586693C11.7869 0.761749 11.8142 0.955998 11.7861 1.14618C11.758 1.33636 11.6757 1.51441 11.549 1.659L6.75301 7.139C6.65915 7.24641 6.5434 7.3325 6.41352 7.39148C6.28364 7.45046 6.14265 7.48098 6.00001 7.48098C5.85737 7.48098 5.71638 7.45046 5.5865 7.39148C5.45663 7.3325 5.34087 7.24641 5.24701 7.139V7.14Z"
-                                fill="currentColor" />
-                        </svg>
-                    </button>
-                    {{-- dropdown --}}
-                    <template x-if="codeType">
-                        <div class="absolute right-0 z-50 mt-1 bg-white border-2 rounded-md w-[179px]">
-                            <ul class="text-left ">
-                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Personal</li>
-                                <li class="p-2 hover:bg-[#D9D9D9] cursor-pointer">Student</li>
+                 <div x-data="select" class="relative h-8 leading-none w-44" @click.outside="open = false">
+                        <button type="button" @click="toggle"
+                            class="flex items-center justify-between font-medium px-3 rounded-md w-full h-full bg-white [#FFFFFF] border border-[#D9D9D9]">
+                            <span class="font-bold" x-text="(option == '') ? 'Company' : option"></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                                <path fill="currentColor"
+                                    d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg>
+                        </button>
+                        <template x-if="open">
+                            <ul
+                                class="absolute font-medium w-full top-0 mt-9 rounded-md z-50 bg-[#FFFFFF] border border-[#E6E6E6] ">
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('Personal')">
+                                    Personal
+                                </li>
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                    @click="setOption('VIP')">
+                                    VIP
+                                </li>
                             </ul>
-                        </div>
-                    </template>
-                </div>
+                        </template>
+                    </div>
             </div>
             <div>
                 <h2 class="text-[#A7A7A7]">Code</h2>
-                <input class="border-2 border-[#AAAAAA] p-2 rounded-md focus:outline-none w-[179px] h-[31px]"
+                <input class="border border-[#AAAAAA] p-2 rounded-md focus:outline-none w-44 h-8"
                     type="text" placeholder="">
             </div>
         </div>
     </div>
 </div>
+
+@push('scripts')
+    <script>
+        // Option Select
+        document.addEventListener("alpine:init", () => {
+            Alpine.data("select", () => ({
+                open: false,
+                option: "",
+
+                toggle() {
+                    this.open = !this.open;
+                },
+
+                setOption(val) {
+                    this.option = val;
+                    this.open = false;
+                },
+            }));
+        });
+    </script>
+@endpush
+
