@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Loading Page
+Route::view('/', 'livewire/components/register/login/load-page')->name('load-page');
 // Login
 Route::view('/login', 'livewire/components/register/login/login-option')->name('login-option');
 Route::view('/login/login-password', 'livewire/components/register/login/login-password')->name('login-password');

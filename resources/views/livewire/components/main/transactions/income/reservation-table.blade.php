@@ -239,25 +239,3 @@
         </tbody>
     </table>
 </div>
-
-<!-- Swiper JS -->
-{{-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-
-@push('js')
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            cssMode: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            mousewheel: true,
-            keyboard: true,
-        });
-
-    </script>
-@endpush --}}

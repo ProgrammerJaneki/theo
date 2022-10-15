@@ -3,75 +3,32 @@
     <div class="px-5 py-3 ml-[320px]">
         <div class="bg-white rounded-md px-9 pb-9">
             {{-- Top --}}
-            <div class="flex items-center justify-center w-full pt-4 gap-x-2">
-                <button type="button"
-                    class="whitespace-nowrap flex items-center justify-center text-lg bg-[#D9D9D9] rounded-full p-6 btn-previous">
-                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 13L1 7L7 1" stroke="#333443" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </button>
-                {{-- Slider --}}
-                <div class="relative flex w-full py-1 overflow-hidden ani-slider ">
-                    {{-- Slides --}}
-                    <div class="absolute px-2 ani-slide">
-                        <img class="rounded-full hover:ring-2 ring-[#4CAF50]"
-                            src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="absolute px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    <div class="px-2 ani-slide">
-                        <img src="{{ asset('images/main/manpower/person.png') }}" alt="">
-                    </div>
-                    {{-- Controls --}}
+            <div class="relative flex items-center justify-center w-full pt-4 gap-x-2">
+                <div class="absolute flex items-center justify-between w-full">
+                    <button type="button"
+                        class="whitespace-nowrap flex items-center justify-center text-lg bg-[#D9D9D9] rounded-full p-4 btn-previous">
+                        <svg class="w-4 h-4" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 13L1 7L7 1" stroke="#333443" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button type="button"
+                        class="flex items-center justify-center whitespace-nowrap text-lg bg-[#D9D9D9] rounded-full p-4 btn-next">
+                        <svg class="w-4 h-4" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 13L7 7L1 1" stroke="#333443" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
                 </div>
-                <button type="button"
-                    class="flex items-center justify-center text-lg bg-[#D9D9D9] rounded-full w-14 h-14 btn-next">
-                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 13L7 7L1 1" stroke="#333443" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </button>
+                {{-- Slider later --}}
+                <div x-data="{pick: false}" class="flex items-center justify-center gap-x-4 w-full overflow-x-hidden p-2 mx-16">
+                    @for ($i = 0; $i < 15; $i++)
+                        <div @click="pick = !pick"  class="flex items-center max-w-14 max-h-14 rounded-full">
+                            <img class="object-cover ring-2 rounded-full hover:ring-2 ring-[#4CAF50]"
+                                src="{{ asset('images/main/manpower/person.png') }}" alt="">
+                        </div>
+                    @endfor
+                </div>
             </div>
             {{-- Dropdowns --}}
             <div x-data="{ monthOption: false, deptOption: false }" class="flex items-center mt-16 text-xs">
@@ -107,16 +64,13 @@
                                         @click="setOption('April')">
                                         April
                                     </li>
-                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
-                                        @click="setOption('May')">
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('May')">
                                         May
                                     </li>
-                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
-                                        @click="setOption('June')">
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('June')">
                                         June
                                     </li>
-                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
-                                        @click="setOption('July')">
+                                    <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('July')">
                                         July
                                     </li>
                                     <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
@@ -162,19 +116,22 @@
                                 class="absolute font-medium w-full top-0 mt-7 rounded-md z-50 bg-[#FFFFFF] border border-[#E6E6E6] ">
                                 <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
                                     @click="setOption('House Keeping')"> House Keeping</li>
-                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
-                                    @click="setOption('Kitchen')"> Kitchen</li>
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('Kitchen')">
+                                    Kitchen</li>
                                 <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
                                     @click="setOption('Electrician')">
                                     Electrician
                                 </li>
-                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('Receptionist')">
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                    @click="setOption('Receptionist')">
                                     Receptionist
                                 </li>
-                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('Purchasing')">
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                    @click="setOption('Purchasing')">
                                     Purchasing
                                 </li>
-                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('Sales & Marketing')">
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                    @click="setOption('Sales & Marketing')">
                                     Sales & Marketing
                                 </li>
                                 <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('IT')">

@@ -13,7 +13,7 @@
         </div>
         {{-- 2 | search Bar --}}
         <div class="flex items-center space-x-7 ">
-            <div class="bg-[#E6E6E6] text-[#A7A7A7] flex items-center gap-x-4 rounded-xl py-3 px-4 w-full max-w-[380px]">
+            <div class="bg-[#E6E6E6] text-[#A7A7A7] flex items-center gap-x-4 rounded-xl py-3 px-4 md:w-72  xl:w-[380px]">
                 <input class="text-[#333443] bg-transparent focus:outline-none w-full" type="text"
                     placeholder="What are you looking for?">
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"

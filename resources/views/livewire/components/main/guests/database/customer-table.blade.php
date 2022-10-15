@@ -1,4 +1,4 @@
-<div x-data="{ showCustomerInfo: false }" class="relative pl-3 overflow-x-auto">
+<div x-data="{ showCustomerInfo: false }" class="relative overflow-x-auto">
     {{-- Drtawer --}}
     {{-- For the meantime since click.outside isn't working for this one --}}
     <template x-if="showCustomerInfo"> 

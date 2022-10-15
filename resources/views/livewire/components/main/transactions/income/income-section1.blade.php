@@ -283,7 +283,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="" class="py-2 px-2 leading-tight bg-white text-[#4CAF50] "</a>
+                            <a href="" class="py-2 px-2 leading-tight bg-white text-[#4CAF50] ">1</a>
                         </li>
                         <li>
                             <a href=""

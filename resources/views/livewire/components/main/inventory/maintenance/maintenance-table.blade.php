@@ -17,14 +17,14 @@
                     <p class="text-base ">Are you sure you want to delete <br>
                         STB0123121?</p>
                 </div>
-                <div class="flex items-center gap-x-5 mt-6">
+                <div class="flex items-center justify-center w-full gap-x-10 mt-6">
                     <button @click="close()"
-                        class="cursor-pointer flex justify-center items-center py-4 border border-[#AF4C4C] text-[#AF4C4C] hover:text-[#FFFFFF] hover:bg-[#AF4C4C] gap-x-3 rounded-xl w-20 transition-all duration-150 ease-linear"
+                        class="cursor-pointer flex justify-center items-center py-3 border border-[#AF4C4C] text-[#AF4C4C] hover:text-[#FFFFFF] hover:bg-[#AF4C4C] gap-x-3 rounded-md w-24 transition-all duration-150 ease-linear"
                         type="button">
                         Cancel
                     </button>
                     <button @click="close()"
-                        class="cursor-pointer flex justify-center items-center py-4 text-[#FFFFFF] bg-[#4CAF50] gap-x-3 rounded-xl w-20 hover:bg-[#4CAF50]/80 transition-all duration-150 ease-linear"
+                        class="cursor-pointer flex justify-center items-center py-3 text-[#FFFFFF] bg-[#4CAF50] gap-x-3 rounded-md w-24 hover:bg-[#4CAF50]/80 transition-all duration-150 ease-linear"
                         type="button">
                         Yes
                     </button>
@@ -34,7 +34,7 @@
     </template>
 
     <table class="w-full text-xs text-left ">
-        <thead class="text-xs font-bold border-b border-[#A7A7A7]">
+        <thead class="text-xs font-bold ">
             <tr>
                 <th scope="col" class="py-3 ">
                     Asset ID

@@ -10,7 +10,7 @@
                     <input @click=" income = !income " type="checkbox" value="" id="checked-toggle"
                         class="sr-only peer" checked="">
                     <div
-                        class="w-14 h-6 bg-gray-200 rounded-full peer   peer-checked:after:translate-x-8 peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#4CAF50]">
+                        class="w-14 h-6 bg-[#D9D9D9] rounded-full peer   peer-checked:after:translate-x-8 peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#4CAF50]">
                     </div>
                 </label>
             </div>
@@ -27,34 +27,37 @@
             </div>
             {{-- View Toggle --}}
             <div class="relative ml-auto">
-                <button @click="openDropdown = !openDropdown" @click.outside="openDropdown = false"
-                    class="flex items-center p-1 gap-x-1" type="button">
-                    <span class="font-bold text-[#4CAF50]">Monthly</span>
-                    <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M5.24701 7.14L0.451011 1.658C-0.114989 1.013 0.345011 3.67706e-07 1.20401 3.67706e-07H10.796C10.9883 -0.000164459 11.1765 0.0550878 11.3381 0.159141C11.4998 0.263194 11.628 0.411637 11.7075 0.586693C11.7869 0.761749 11.8142 0.955998 11.7861 1.14618C11.758 1.33636 11.6757 1.51441 11.549 1.659L6.75301 7.139C6.65915 7.24641 6.5434 7.3325 6.41352 7.39148C6.28364 7.45046 6.14265 7.48098 6.00001 7.48098C5.85737 7.48098 5.71638 7.45046 5.5865 7.39148C5.45663 7.3325 5.34087 7.24641 5.24701 7.139V7.14Z"
-                            fill="currentColor" />
-                    </svg>
-                </button>
-                {{-- dropdown --}}
-                <template x-if="openDropdown">
-                    <div class="absolute right-0 z-50 bg-white border-2 rounded-md w-28">
-                        <ul class="text-left ">
-                            <li class="px-2 py-1 hover:bg-[#D9D9D9] cursor-pointer">Daily</li>
-                            <li class="px-2 py-1 hover:bg-[#D9D9D9] cursor-pointer">Weekly</li>
-                        </ul>
+                  <div x-data="select" class="relative w-24 h-6 leading-none" @click.outside="open = false">
+                        <button type="button" @click="toggle"
+                            class="flex items-center font-medium justify-between rounded-md w-full h-full bg-FFFFFF] ">
+                            <span class="font-bold text-[#4CAF50]" x-text="(option == '') ? 'Monthly' : option"></span>
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" 
+                                preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                                <path fill="currentColor"
+                                    d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg>
+                        </button>
+                        <template x-if="open">
+                            <ul class="absolute font-medium w-full top-0 mt-7 rounded-md z-50 bg-[#FFFFFF] border border-[#E6E6E6] ">
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200" @click="setOption('Monthly')">
+                                    Monthly
+                                </li>
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                    @click="setOption('Weekly')">
+                                    Weekly
+                                </li>
+                                <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                    @click="setOption('Daily')">
+                                    Daily
+                                </li>
+                            </ul>
+                        </template>
                     </div>
-                </template>
             </div>
         </div>
         {{-- Chart --}}
-        <div class="flex flex-col gap-y-5">
-            <hr class=" text-[#A7A7A7]">
-
-            <div class="bg-[#4CAF50] w-[658px] h-[200px]">Chart</div>
-
-            <hr class=" text-[#A7A7A7]">
+        <div class="pb-5 border-y border-[#A7A7A7]">
+            <canvas id="myChart" width="658" height="200"></canvas>
         </div>
         {{-- Totals --}}
         <div class="flex items-center ml-auto gap-x-16">
@@ -94,77 +97,73 @@
     </div>
 </div>
 
-
-@push('head')
-<script src="https://unpkg.com/@themesberg/flowbite@1.1.0/dist/flowbite.bundle.js"></script>
-@endpush
-
-@push('js')
-    <style>
-        /* CHECKBOX TOGGLE SWITCH */
-        /* @apply rules for documentation, these do not work as inline style */
-        #toggle-example {
-        right: 0;
-        border-color: #4CAF50;
-        }
-        #toggle-example + .toggle-label {
-        background-color: #4CAF50;
-        }
-    </style>
-    <style>
-        #chart {
-            height: 440px;
-        }
-    </style>
+@push('scripts')
     <script>
-        $(() => {
-            $('#chart').dxChart({
-                dataSource,
-                series: {
-                    argumentField: 'day',
-                    valueField: 'greenbar',
-                    name: 'Revenue',
-                    type: 'bar',
-                    color: '#4CAF50',
+        // Chart JS
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Opt', 'Nov', 'Dec'],
+                datasets: [{
+                    label: '',
+                    data: [650, 100, 200, 150, 200, 200, 80, 680, 1000, 880, 950, 880],
+                    backgroundColor: '#4CAF50',
+                    borderColor: '#4CAF50',
+                    backgroundColor: [
+                        '#4CAF50'
+                    ],
+                    borderColor: [
+                        '#4CAF50'
+                    ],
+                    borderWidth: 0,
+                    borderRadius: 5,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 250
+                        },
+                        grid: {
+                            display: false,
+                            drawBorder: false
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false,
+                            drawBorder: false
+                        }
+                    }
                 },
-            });
+                plugins: {
+                    legend: {
+                        labels: {
+                            boxWidth: 0
+                        }
+                    }
+                }
+            }
         });
-        const dataSource = [{
-            day: 'Jan',
-            greenbar: 730,
-        }, {
-            day: 'Feb',
-            greenbar: 100,
-        }, {
-            day: 'Mar',
-            greenbar: 230,
-        }, {
-            day: 'April',
-            greenbar: 200,
-        }, {
-            day: 'May',
-            greenbar: 230,
-        }, {
-            day: 'Jun',
-            greenbar: 230,
-        }, {
-            day: 'Jul',
-            greenbar: 50,
-        }, {
-            day: 'Aug',
-            greenbar: 650,
-        }, {
-            day: 'Sep',
-            greenbar: 950,
-        }, {
-            day: 'Oct',
-            greenbar: 850,
-        }, {
-            day: 'Nov',
-            greenbar: 930,
-        }, {
-            day: 'Dec',
-            greenbar: 860,
-        }];
+        // Option Select
+        document.addEventListener("alpine:init", () => {
+            Alpine.data("select", () => ({
+                open: false,
+                option: "",
+
+                toggle() {
+                    this.open = !this.open;
+                },
+
+                setOption(val) {
+                    this.option = val;
+                    this.open = false;
+                },
+            }));
+        });
     </script>
 @endpush

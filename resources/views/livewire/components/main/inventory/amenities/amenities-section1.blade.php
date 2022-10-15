@@ -59,12 +59,12 @@
                 </div>
             </div>
             {{-- Body --}}
-            <div class="flex w-full h-full gap-x-20 mt-9">
+            <div x-data="chooseItem: false" class="flex w-full h-full gap-x-20 mt-9">
                 {{-- Left --}}
                 <div class="flex flex-wrap h-full gap-x-10 gap-y-9">
                     @for ($i = 0; $i < 12; $i++)
                         <button
-                            class="group flex flex-col py-3 focus:ring-4 ring-[#4CAF50] px-2 rounded-xl mt-auto gap-y-3 border border-[#AAAAAA] w-40 h-40"
+                            class="group flex flex-col py-3 ring-[#4CAF50] px-2 rounded-xl mt-auto gap-y-3 border border-[#AAAAAA] w-40 h-40"
                             type="button">
                             <img class="object-cover rounded-md w-44 h-28"
                                 src="{{ asset('images/main/dashboard/bed.png') }}" alt="">
