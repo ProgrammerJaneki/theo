@@ -1,9 +1,7 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
-    <div class="px-5 py-3 ml-[320px]">
-        <div class="min-h-screen px-8 pb-5 bg-white rounded-md">
             {{-- Top --}}
-            <div x-data="{ showAll: true, showElectronics: false, showFurnitures: false, showFoodBeve: false }" class="w-full pt-5 pb-0 space-y-11 ">
+            <div x-data="{ showAll: true, showElectronics: false, showFurnitures: false, showFoodBeve: false }" class="w-full pt-5 pb-0 space-y-7 ">
                 <h2 class="font-bold">Amenities</h2>
                 <div class="flex items-center justify-between text-xs">
                     {{-- Left --}}
@@ -78,6 +76,4 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
 @endsection

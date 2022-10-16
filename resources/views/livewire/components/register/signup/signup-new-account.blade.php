@@ -54,9 +54,11 @@
                             <h2>You are now registered. <br>
                                 Please check your email to verify your account.</h2>
                         </div>
-                        <button
+                        <a @click="openVerify = !openVerify"
                             class="cursor-pointer flex justify-center items-center py-3 text-[#FFFFFF] bg-[#4CAF50] gap-x-3  rounded-xl w-80 hover:ring-4 transition-all duration-300 ease-linear"
-                            type="button" @click=" openVerify = !openVerify ">Verify</button>
+                            href="{{ route('login-password') }}">
+                            Verify
+                        </a>
                     </div>
                 </div>
             </template>

@@ -28,15 +28,14 @@
             display: none !important;
         }
     </style>
-
+    @stack('head')
 </head>
 
 <body class="antialiased ">
     @yield('main-base')
 
-
-    <livewireScripts />
     @stack('scripts')
+    <livewireScripts />
 </body>
 
 </html>

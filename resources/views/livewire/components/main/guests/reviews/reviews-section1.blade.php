@@ -1,7 +1,5 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
-    <div class="px-5 py-3 ml-[320px]">
-        <div class="px-12 pb-5 bg-white rounded-md">
             {{-- Top --}}
             <div class="flex w-full pb-8 pt-7 ">
                 <h2 class="font-bold">Customer Reviews</h2>
@@ -227,8 +225,6 @@
                     </li>
                 </ul>
             </nav>
-        </div>
-    </div>
 @endsection
 
 @push('scripts')

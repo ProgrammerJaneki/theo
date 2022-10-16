@@ -1,4 +1,4 @@
-<div class="relative pl-3 overflow-x-auto">
+<div class="relative overflow-x-auto">
     <table class="w-full text-sm text-left">
         <thead class="text-xs font-bold border-b border-[#A7A7A7]">
             <tr>

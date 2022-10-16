@@ -1,8 +1,8 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
-    <div class="px-5 py-3 ml-[320px]">
+    {{-- <div class="px-5 py-3 ml-[320px]"> --}}
         {{-- Main Section --}}
-        <div class="min-h-screen px-5 bg-white rounded-md pb-9">
+        {{-- <div class="min-h-screen px-5 bg-white rounded-md pb-9"> --}}
             {{-- Upper Part --}}
             <div class="flex items-center justify-between w-full pt-5 pb-7 gap-x-2">
                 {{-- Booked --}}
@@ -148,6 +148,6 @@
             <livewire:components.main.dashboard.dashboard-schedule />
             {{-- Revenue --}}
             <livewire:components.main.dashboard.dashboard-revenue />
-        </div>
-    </div>
+        {{-- </div> --}}
+    {{-- </div> --}}
 @endsection

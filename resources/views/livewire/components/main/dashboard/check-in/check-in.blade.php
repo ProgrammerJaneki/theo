@@ -1,7 +1,5 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
-    <div class="px-5 py-3 ml-[320px]">
-        <div class="px-6 bg-white rounded-md pb-9">
             {{-- Upper Part --}}
             <div class="flex flex-col pt-7 gap-y-6">
                 <h1 class="font-bold text-[#4CAF50]">Check-in</h1>
@@ -297,8 +295,6 @@
                     </button>
                 </div>
             </div>
-        </div>
-    </div>
 @endsection
 
 @push('scripts')

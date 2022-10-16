@@ -1,7 +1,7 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
-    <div class="px-5 py-3 ml-[320px]">
-        <div class="min-h-screen bg-white rounded-md px-9 pb-9">
+    {{-- <div class="px-5 py-3 ml-[320px]">
+        <div class="min-h-screen bg-white rounded-md px-9 pb-9"> --}}
             {{-- Top --}}
             <div class="flex items-center justify-between w-full py-4 ">
                 <a class="flex items-center gap-x-2" href="{{ route('employe-list-section1') }}">
@@ -46,7 +46,7 @@
                 {{-- Profile --}}
                 <div class="flex py-8 border-y-2 border-[#CACACA]">
                     <div class="flex items-center w-full gap-x-10">
-                        <img class="w-48 h-full" src="{{ asset('images/main/manpower/user-profile.png') }}" alt="user">
+                        <img class="h-full w-44" src="{{ asset('images/main/manpower/user-profile.png') }}" alt="user">
                         {{-- Top --}}
                         <div class="flex flex-col w-full text-xs gap-y-2">
                             <div class="flex items-center justify-between">
@@ -114,6 +114,6 @@
                 </div>
                 <livewire:components.main.manpower.employe-list.add-employee-info />
             </form>
-        </div>
-    </div>
+        {{-- </div>
+    </div> --}}
 @endsection

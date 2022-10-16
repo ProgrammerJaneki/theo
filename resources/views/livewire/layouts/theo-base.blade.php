@@ -10,9 +10,13 @@
                 <div class="fixed ">
                     <livewire:components.main.main-panel />
                 </div>
-                @yield('main-theo')
+                    <div class="px-5 py-3 ml-[320px]">
+                            <div class="min-h-screen px-6 bg-white rounded-md pb-9">
+                        @yield('main-theo')
+                    </div>
+                </div>
             </div>
-                            {{-- @yield('main-theo') --}}
+            {{-- @yield('main-theo') --}}
             {{-- <div class="fixed w-full mt-[110px]">
                 <livewire:components.main.main-panel />
             </div> --}}

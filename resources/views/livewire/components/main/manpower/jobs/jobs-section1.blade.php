@@ -1,7 +1,5 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
-    <div class="px-5 py-3 ml-[320px]">
-        <div class="bg-white rounded-md px-7 pb-9">
             {{-- Top --}}
             <div x-data="{ showAll: true, showPublished: false, showDraft: false, showSaved: false }" class="flex items-center justify-between w-full pt-5 pb-0 text-xs ">
                 {{-- Left --}}
@@ -133,7 +131,6 @@
                     </div>
                 </div>
             </div>
-
             {{-- Job Info --}}
             <div class="flex flex-wrap w-full gap-x-4 gap-y-9 mt-9">
                 {{-- 1 --}}
@@ -315,8 +312,6 @@
                 </div>
 
             </div>
-        </div>
-    </div>
 @endsection
 
 @push('scripts')

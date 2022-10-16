@@ -1,9 +1,9 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
-    <div class="px-5 py-3 ml-[320px]">
-        <div class="bg-white rounded-md px-9 pb-9">
+    {{-- <div class="px-5 py-3 ml-[320px]">
+        <div class="bg-white rounded-md px-9 pb-9"> --}}
             {{-- Top --}}
-            <div x-data="{ edit: true, save: false, saveEdit: false, publish: false }" class="flex justify-between text-xs w-full pt-6 ">
+            <div x-data="{ edit: true, save: false, saveEdit: false, publish: false }" class="flex justify-between w-full pt-6 text-xs ">
                 <a class="flex items-center text-base font-bold gap-x-3" href="{{ route('jobs-section1') }}">
                     <svg class="w-3 h-3" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 13L1 7L7 1" stroke="#333443" stroke-width="2" stroke-linecap="round"
@@ -12,7 +12,7 @@
                     <span>House Keeping</span>
                 </a>
 
-                <div class="text-xs flex items-center gap-x-3">
+                <div class="flex items-center text-xs gap-x-3">
                     {{-- Toggle from Edit button to Save and vice versa --}}
                     <div>
                         <template x-if="edit">
@@ -40,7 +40,7 @@
                     {{-- Save Edit --}}
                     <template x-if="saveEdit">
                         <div
-                            class="fixed inset-0 top-0 left-0 right-0 z-50 flex items-center justify-center w-full overflow-x-hidden overflow-y-hidden  bg-smoke-lighter">
+                            class="fixed inset-0 top-0 left-0 right-0 z-50 flex items-center justify-center w-full overflow-x-hidden overflow-y-hidden bg-smoke-lighter">
                             {{-- Saved --}}
                             <div
                                 class="animate__animated animate__bounceInUp flex text-center flex-col items-center justify-center leading-none bg-white rounded-xl w-[550px] h-[377px]">
@@ -65,7 +65,7 @@
                     {{-- Publish Modal --}}
                     <template x-if="publish">
                         <div
-                            class="fixed inset-0 top-0 left-0 right-0 z-50 flex items-center justify-center w-full overflow-x-hidden overflow-y-hidden  bg-smoke-lighter">
+                            class="fixed inset-0 top-0 left-0 right-0 z-50 flex items-center justify-center w-full overflow-x-hidden overflow-y-hidden bg-smoke-lighter">
                             {{-- Saved --}}
                             <div
                                 class="animate__animated animate__bounceInUp flex text-center flex-col items-center justify-center leading-none bg-white rounded-xl w-[550px] h-[377px]">
@@ -92,10 +92,10 @@
             </div>
             {{-- Job Name --}}
             <div class="pb-6 border-b-2 border-[#A7A7A7]">
-                <h2 class="font-bold text-2xl mt-2 ml-6">Room Attendant</h2>
+                <h2 class="mt-2 ml-6 text-2xl font-bold">Room Attendant</h2>
             </div>
             {{-- Details --}}
-            <div x-data="{ showJob: true, showApplicants: false }" class="flex items-center gap-x-36 mt-4 w-full h-full">
+            <div x-data="{ showJob: true, showApplicants: false }" class="flex items-center w-full h-full mt-4 gap-x-36">
                 {{-- Left --}}
                 <div class="flex flex-col max-w-[438px]">
                     {{-- Top --}}
@@ -130,9 +130,9 @@
                             </div>
                         </div>
                         {{-- Requirements --}}
-                        <div class="space-y-4 mt-10">
+                        <div class="mt-10 space-y-4">
                             <h2 class="font-bold">Requirements</h2>
-                            <ul class="text-xs space-y-1 pl-4 max-w-md list-disc list-outside ">
+                            <ul class="max-w-md pl-4 space-y-1 text-xs list-disc list-outside ">
                                 <li>
                                     High school diploma, preferred.
                                 </li>
@@ -164,7 +164,7 @@
                             </ul>
                         </div>
                         {{-- Salary Range --}}
-                        <div class="space-y-4 mt-10">
+                        <div class="mt-10 space-y-4">
                             <h2 class="font-bold">Salary Range</h2>
                             <div class="flex">
                                 <span>P18,000</span>-
@@ -195,7 +195,7 @@
                     <div class="flex flex-col gap-y-12">
                         <div class="">
                             <h2>Recruitment Period</h2>
-                            <h2 class="font-bold mt-2">Rashed Evans</h2>
+                            <h2 class="mt-2 font-bold">Rashed Evans</h2>
                             <img class="w-9 h-9" src="{{ asset('images/main/manpower/gray.png') }}" alt="">
                         </div>
                         <div class="space-y-2">
@@ -212,12 +212,12 @@
                             <h2>Max: <span class="font-bold">P30, 000.00</span> </h2>
                         </div>
                     </div>
-                    <div class="space-y-2 mt-auto">
+                    <div class="mt-auto space-y-2">
                         <h2>Last Update</h2>
                         <h2 class="font-bold">16 Minutes ago</h2>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        {{-- </div>
+    </div> --}}
 @endsection

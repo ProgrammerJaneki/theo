@@ -1,7 +1,5 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
-    <div class="px-5 py-3 ml-[320px]">
-        <div class="bg-white rounded-md px-7 pb-9">
             {{-- Top --}}
             <div x-data="{ showAll: true, showNew: false, showRegular: false, showVip: false }" class="flex items-center justify-between w-full pt-5 pb-0 text-xs ">
                 {{-- Left --}}
@@ -252,8 +250,6 @@
                 </nav>
 
             </div>
-        </div>
-    </div>
 @endsection
 
 @push('scripts')

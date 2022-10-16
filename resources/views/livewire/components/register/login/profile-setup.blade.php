@@ -45,7 +45,7 @@
         </template>
         {{-- 2 --}}
         <template x-if="secondSlide">
-            <div class="overflow-hidden w-full">
+            <div class="w-full overflow-hidden">
                 <div class="flex items-center justify-center w-full animate__animated animate__fadeInRight">
                     {{-- Left --}}
                     <div class="right-0 flex items-center justify-center w-7/12 bg-[#FFFFFF] ">
@@ -87,7 +87,7 @@
         </template>
         {{-- 3 --}}
         <template x-if="thirdSlide">
-            <div class="overflow-hidden w-full">
+            <div class="w-full overflow-hidden">
                 <div class="flex items-center justify-center w-full animate__animated animate__fadeInRight">
                     {{-- Left --}}
                     <div class="right-0 flex items-center justify-center w-7/12 bg-[#FFFFFF] ">
@@ -192,7 +192,7 @@
                                 <template x-if="open">
                                     <ul
                                         class="absolute w-full top-5 mt-8 rounded-xl z-50 bg-[#FFFFFF] border border-[#E6E6E6] ">
-                                        <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        <li class="p-2 cursor-pointer select-none rounded-t-md hover:bg-gray-200"
                                             @click="setOption('Male')">
                                             Male
                                         </li>
@@ -200,7 +200,7 @@
                                             @click="setOption('Female')">
                                             Female
                                         </li>
-                                        <li class="p-2 cursor-pointer select-none hover:bg-gray-200"
+                                        <li class="p-2 cursor-pointer select-none rounded-b-md hover:bg-gray-200"
                                             @click="setOption('Prefer Not to')">
                                             Prefer not to
                                         </li>

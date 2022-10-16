@@ -1,7 +1,5 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
-    <div class="px-5 py-3 ml-[320px]">
-        <div class="px-8 pb-5 bg-white rounded-md">
             {{-- Top --}}
             <div class="flex w-full pb-8 pt-7 ">
                 <h2 class="font-bold">Facilities</h2>
@@ -151,20 +149,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 @endsection
 
 @push('scripts')
     <script src="https://unpkg.com/flowbite@1.5.3/dist/datepicker.js"></script>
 @endpush
 
-{{-- <div class="flex items-center justify-between p-2 bg-red-200 rounded-md">
-    <input datepicker datepicker-orientation="bottom" type="text"
-        class="block w-full bg-transparent bg-white datepicker-picker focus:outline-none" placeholder="MM/DD/YYYY">
-    <svg aria-hidden="true" class="w-5 h-5 fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd"
-            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-            clip-rule="evenodd"></path>
-    </svg>
-</div> --}}

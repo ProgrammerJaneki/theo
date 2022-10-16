@@ -28,7 +28,7 @@
             <h2 class="text-[#FFFFFF]">Hotal Accomodation & Reservation System</h2>
             {{-- Loading bar --}}
             <div class="text-center w-[408px] mt-20 ">
-                <div class="rounded-md mb-2" id="myProgress">
+                <div class="mb-2 rounded-md" id="myProgress">
                     <div class="rounded-md" id="myBar"></div>
                 </div>
                 <span class="text-[#FFFFFF] ">Loading...</span>
@@ -54,7 +54,7 @@
                         if (width >= 100) {
                             clearInterval(id);
                             i = 0;
-                            window.location.href = "{{ route('dashboard-section1') }}";
+                            window.location.href = "{{ route('login-option') }}";
                         } else {
                             width++;
                             elem.style.width = width + "%";

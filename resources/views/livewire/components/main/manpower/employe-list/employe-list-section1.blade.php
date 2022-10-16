@@ -1,8 +1,7 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
-    <div class="px-5 py-3 ml-[320px]">
-        {{-- Main Section --}}
-        <div class="bg-white rounded-md px-9 pb-9">
+    {{-- <div class="px-5 py-3 ml-[320px]"> --}}
+        <div class="px-0 ">
             {{-- Upper Part --}}
             <div class="flex items-center justify-between w-full pt-5 pb-0 ">
                 <a class="bg-[#4CAF50] text-[#FFFFFF] flex items-center py-3 px-6 gap-x-2 rounded-md text-xs hover:bg-[#4CAF50]/80 transition-all duration-150 ease-linear"
@@ -39,7 +38,7 @@
                 </div>
             </div>
             {{-- Controls --}}
-            <div x-data="{ filterBy: false, showOnly: false, orderBy: false }" class="flex items-center pl-3 mt-10 text-xs gap-x-8">
+            <div x-data="{ filterBy: false, showOnly: false, orderBy: false }" class="flex items-center mt-10 text-xs gap-x-8">
                 {{-- Filter --}}
                 <div class="flex items-center gap-x-2">
                     <label for="filter">Filter by:</label>
@@ -183,7 +182,7 @@
                     </nav>
                 </div>
         </div>
-    </div>
+    {{-- </div> --}}
 @endsection
 
 @push('scripts')

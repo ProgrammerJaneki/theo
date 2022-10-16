@@ -1,12 +1,12 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
-    <div class="px-5 py-3 ml-[320px]">
-        <div class="min-h-screen text-xs bg-white rounded-md px-7 pb-9">
+    {{-- <div class="px-5 py-3 ml-[320px]">
+        <div class="min-h-screen text-xs bg-white rounded-md px-7 pb-9"> --}}
             {{-- Top --}}
-            <div class="flex items-center justify-between w-full pt-5 pb-0 ">
+            <div class="flex items-center justify-between w-full pt-5 pb-0 text-xs ">
                 <h1 class="text-base font-bold">Monday, 23 August, 2022</h1>
                 <a class="bg-[#4CAF50] text-[#FFFFFF] flex items-center py-3 px-6 gap-x-2 rounded-md hover:bg-[#4CAF50]/80 transition-all duration-150 ease-linear"
-                    href="{{ route('add-job') }}">
+                    href="{{ route('maintenance-section1') }}">
                     <svg class="w-4 h-4" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M14 1C14.2652 1 14.5196 1.10536 14.7071 1.29289C14.8946 1.48043 15 1.73478 15 2V14C15 14.2652 14.8946 14.5196 14.7071 14.7071C14.5196 14.8946 14.2652 15 14 15H2C1.73478 15 1.48043 14.8946 1.29289 14.7071C1.10536 14.5196 1 14.2652 1 14V2C1 1.73478 1.10536 1.48043 1.29289 1.29289C1.48043 1.10536 1.73478 1 2 1H14ZM2 0C1.46957 0 0.960859 0.210714 0.585786 0.585786C0.210714 0.960859 0 1.46957 0 2L0 14C0 14.5304 0.210714 15.0391 0.585786 15.4142C0.960859 15.7893 1.46957 16 2 16H14C14.5304 16 15.0391 15.7893 15.4142 15.4142C15.7893 15.0391 16 14.5304 16 14V2C16 1.46957 15.7893 0.960859 15.4142 0.585786C15.0391 0.210714 14.5304 0 14 0L2 0Z"
@@ -173,8 +173,8 @@
                     </li>
                 </ul>
             </nav>
-        </div>
-    </div>
+        {{-- </div>
+    </div> --}}
 @endsection
 
 @push('scripts')

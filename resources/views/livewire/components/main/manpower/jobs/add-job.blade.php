@@ -1,7 +1,5 @@
 @extends('livewire.layouts.theo-base')
 @section('main-theo')
-    <div class="px-5 py-3 ml-[320px]">
-        <div class="bg-white rounded-md px-9 pb-9">
             <form action="{{ route('job-info') }}">
                 {{-- Top --}}
                 <div x-data="saveJob: false"
@@ -278,8 +276,6 @@
                         </div>
                     </div>
             </form>
-        </div>
-    </div>
 @endsection
 
 @push('scripts')
